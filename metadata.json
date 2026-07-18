@@ -1,0 +1,6 @@
+{
+  "name": "Smilyx Aligners",
+  "description": "Premier clear aligner orthodontic services and streamlined custom treatment workflows.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

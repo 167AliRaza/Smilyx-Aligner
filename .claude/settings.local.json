@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node _contrast.mjs)",
+      "Bash(node _graphite.mjs)",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w '%{http_code} %{size_download}' 'https://images.unsplash.com/photo-__TRACKED_VAR__?q=80&w=2400&auto=format&fit=crop')"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"C:\\\\Users\\\\User-1\\\\.claude\\\\skills\\\\impeccable\\\\scripts\\\\hook.mjs\"",
+            "timeout": 5,
+            "statusMessage": "Checking UI changes"
+          }
+        ]
+      }
+    ]
+  },
+  "description": "Impeccable design detector: runs after Edit/Write/MultiEdit on UI files and surfaces findings as system reminders."
+}

@@ -1,0 +1,361 @@
+import { useState } from "react";
+import { ArrowRight, ShieldCheck, Sparkles, CheckCircle } from "lucide-react";
+import Hero from "../components/Hero";
+import CTASection from "../components/CTASection";
+import TestimonialCard from "../components/TestimonialCard";
+import InteractiveForm from "../components/InteractiveForm";
+import { services, testimonials } from "../data";
+
+interface HomeProps {
+  onNavigate: (page: string) => void;
+  onSetContactDefault: (type: "trial" | "meeting" | "general") => void;
+}
+
+export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
+  // Simple state to simulate interactive tooth movement preview video
+  const [isPlayingVideo, setIsPlayingVideo] = useState(false);
+  const [videoStage, setVideoStage] = useState(1);
+
+  const triggerVideoSimulation = () => {
+    setIsPlayingVideo(true);
+    setVideoStage(1);
+    const interval = setInterval(() => {
+      setVideoStage((prev) => {
+        if (prev >= 6) {
+          clearInterval(interval);
+          return 6;
+        }
+        return prev + 1;
+      });
+    }, 1000);
+  };
+
+  const handleCtaClick = () => {
+    onSetContactDefault("trial");
+    onNavigate("contact");
+    const el = document.getElementById("home-contact-form");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleScheduleClick = () => {
+    onSetContactDefault("meeting");
+    onNavigate("contact");
+    const el = document.getElementById("home-contact-form");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <div id="homepage-content" className="space-y-0">
+      {/* a) Hero section */}
+      <Hero onCtaClick={handleCtaClick} />
+
+      {/* Brand Intro Strip */}
+      <div className="py-5 w-full bg-brand-50 flex items-center justify-center px-6 sm:px-12 border-b border-brand-100 text-center">
+        <p className="text-brand-900 text-xs sm:text-sm font-medium italic">
+          "Detailed protocols. Streamlined workflow. Minimal errors. Smilyx is the preferred partner for clinical excellence."
+        </p>
+      </div>
+
+      {/* b) Brand intro strip */}
+      <section id="brand-intro-strip" className="py-20 bg-white border-b border-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Supporting Image */}
+            <div className="relative group">
+              <div className="absolute -inset-2 bg-gradient-to-r from-brand-500 to-teal-500 rounded-3xl blur-xl opacity-10 group-hover:opacity-20 transition-all duration-300" />
+              <img
+                src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=800&auto=format&fit=crop"
+                alt="Detailed clinical orthodontics protocol"
+                className="rounded-3xl shadow-lg w-full object-cover aspect-video relative z-10 border border-slate-100"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute bottom-4 left-4 z-20 bg-slate-900/80 backdrop-blur-md px-4 py-2 rounded-2xl flex items-center space-x-2 border border-white/10 text-white">
+                <ShieldCheck className="w-4 h-4 text-brand-400" />
+                <span className="font-mono text-[10px] tracking-wider uppercase font-semibold">
+                  Zero Error Protocol
+                </span>
+              </div>
+            </div>
+
+            {/* Intro Copy */}
+            <div className="space-y-6">
+              <div className="inline-flex items-center space-x-2 text-brand-600">
+                <Sparkles className="w-5 h-5" />
+                <span className="font-mono text-xs font-bold uppercase tracking-widest">
+                  Our Biological Philosophy
+                </span>
+              </div>
+              <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight leading-tight">
+                Streamlined Workflows. <br />
+                Predictable Movement. Minimal Errors.
+              </h2>
+              <p className="text-slate-600 text-sm leading-relaxed max-w-xl">
+                Every custom aligner treatment plan at Smilyx is engineered by our specialized clinical planning team—consisting of dedicated doctors and an aligner expert, assisted by a certified dental technologist—under the active supervision of a licensed master orthodontist. By tracking tooth displacement with high-resolution digital simulations, we produce clear aligners that seat perfectly on the first try. This means fewer treatment mid-course corrections, minimal clinic chair time, and comfortable tooth translations that stay locked in.
+              </p>
+              <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-100">
+                <div>
+                  <span className="font-display font-black text-3xl text-brand-600 block">99.8%</span>
+                  <span className="text-slate-500 text-xs font-semibold">Perfect seating rate</span>
+                </div>
+                <div>
+                  <span className="font-display font-black text-3xl text-brand-600 block">24 Hours</span>
+                  <span className="text-slate-500 text-xs font-semibold">Average setup review</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* c) "Our Services" section */}
+      <section id="our-services-section" className="py-24 bg-slate-50/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+            <div className="space-y-4 text-left">
+              <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">
+                What We Provide
+              </span>
+              <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight">
+                Our Clinical Solutions
+              </h2>
+              <p className="text-slate-600 text-sm max-w-2xl leading-relaxed">
+                From high-resolution 3D diagnostic mapping to custom hand-polished thermoformed aligners, we power the entire digital orthodontic cycle.
+              </p>
+            </div>
+            <button
+              onClick={() => onNavigate("how-we-treat")}
+              className="inline-flex items-center space-x-2 text-brand-600 hover:text-brand-700 font-display font-bold text-sm tracking-wide transition-colors cursor-pointer group"
+            >
+              <span>Learn Our Entire Process</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {services.map((service) => (
+              <div
+                key={service.id}
+                id={`service-card-${service.id}`}
+                className="bg-white rounded-3xl p-8 border border-slate-100 hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+              >
+                <div className="space-y-4">
+                  <div className="h-48 rounded-2xl overflow-hidden">
+                    <img
+                      src={service.imageUrl}
+                      alt={service.title}
+                      className="w-full h-full object-cover"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  <h3 className="font-display font-bold text-xl text-slate-900">
+                    {service.title}
+                  </h3>
+                  <p className="text-slate-500 text-xs leading-relaxed line-clamp-3">
+                    {service.shortDesc}
+                  </p>
+                </div>
+
+                <div className="pt-6 border-t border-slate-50 mt-6">
+                  <button
+                    onClick={() => onNavigate("how-we-treat")}
+                    className="text-brand-600 hover:text-brand-700 font-display font-bold text-xs tracking-wider uppercase inline-flex items-center space-x-1 cursor-pointer group"
+                  >
+                    <span>Read More</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* d) Treatment Options Overview */}
+      <section id="treatment-options-overview" className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+            <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">
+              Treatment Options
+            </span>
+            <h2 className="font-display font-black text-3xl sm:text-4xl text-slate-900 tracking-tight italic">
+              Orthodontics Tailored For Every Stage Of Life
+            </h2>
+            <p className="text-slate-500 text-sm leading-relaxed">
+              We combine advanced clinical technology and professional care to provide treatment options suited to kids, teens, and adults alike.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Invisalign Card */}
+            <div className="bg-slate-50 rounded-3xl p-6 border border-slate-100 flex flex-col justify-between hover:border-brand-200 hover:shadow-lg transition-all duration-300">
+              <div className="space-y-4">
+                <div className="h-40 rounded-2xl overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=400"
+                    alt="Invisalign Treatment"
+                    className="w-full h-full object-cover"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+                <h3 className="font-display font-bold text-lg text-slate-900">Invisalign</h3>
+                <p className="text-slate-500 text-xs leading-relaxed">
+                  Clear, comfortable, and completely removable alternative to traditional braces.
+                </p>
+              </div>
+              <button
+                onClick={() => onNavigate("invisalign")}
+                className="mt-6 w-full py-2.5 rounded-full bg-white border border-slate-200 text-brand-600 hover:bg-brand-50 font-display font-bold text-xs uppercase tracking-wider transition-all cursor-pointer text-center"
+              >
+                Learn More
+              </button>
+            </div>
+
+            {/* Kids Ortho Card */}
+            <div className="bg-slate-50 rounded-3xl p-6 border border-slate-100 flex flex-col justify-between hover:border-brand-200 hover:shadow-lg transition-all duration-300">
+              <div className="space-y-4">
+                <div className="h-40 rounded-2xl overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=400"
+                    alt="Orthodontics for Kids"
+                    className="w-full h-full object-cover"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+                <h3 className="font-display font-bold text-lg text-slate-900">Kids Orthodontics</h3>
+                <p className="text-slate-500 text-xs leading-relaxed">
+                  Early screening and Phase 1 interceptive growth guidance for developing jaws.
+                </p>
+              </div>
+              <button
+                onClick={() => onNavigate("kids-ortho")}
+                className="mt-6 w-full py-2.5 rounded-full bg-white border border-slate-200 text-brand-600 hover:bg-brand-50 font-display font-bold text-xs uppercase tracking-wider transition-all cursor-pointer text-center"
+              >
+                Learn More
+              </button>
+            </div>
+
+            {/* Adult Ortho Card */}
+            <div className="bg-slate-50 rounded-3xl p-6 border border-slate-100 flex flex-col justify-between hover:border-brand-200 hover:shadow-lg transition-all duration-300">
+              <div className="space-y-4">
+                <div className="h-40 rounded-2xl overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1513224502586-d1e602410265?q=80&w=400"
+                    alt="Adult Orthodontics"
+                    className="w-full h-full object-cover"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+                <h3 className="font-display font-bold text-lg text-slate-900">Adult Orthodontics</h3>
+                <p className="text-slate-500 text-xs leading-relaxed">
+                  Discrete treatment options designed specifically to fit your professional life.
+                </p>
+              </div>
+              <button
+                onClick={() => onNavigate("adult-ortho")}
+                className="mt-6 w-full py-2.5 rounded-full bg-white border border-slate-200 text-brand-600 hover:bg-brand-50 font-display font-bold text-xs uppercase tracking-wider transition-all cursor-pointer text-center"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* e) "About Us" teaser */}
+      <section id="about-us-teaser" className="py-24 bg-slate-50/30 border-t border-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Copy teaser */}
+            <div className="space-y-6">
+              <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">
+                Meet Smilyx
+              </span>
+              <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight leading-tight">
+                An Orthodontic Lab Crafted for Absolute Accuracy.
+              </h2>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Founded by a veteran team of board-certified orthodontists and biomaterial lab technicians, Smilyx Clear Aligners bridges the gap between high-tech dental diagnostics and physical comfort. We refuse fully automated cookie-cutter aligner algorithms, insisting that every stage is personally checked, customized, and approved by a licensed doctor.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-brand-600 shrink-0 mt-0.5" />
+                  <p className="text-slate-700 text-xs font-medium">Licensed Clinical Orthodontists inspecting every case plan</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-brand-600 shrink-0 mt-0.5" />
+                  <p className="text-slate-700 text-xs font-medium">Multi-layered clinical PETG for 40% more persistent dental force</p>
+                </div>
+              </div>
+              <div className="pt-4">
+                <button
+                  onClick={() => onNavigate("about-us")}
+                  className="bg-brand-600 hover:bg-brand-700 text-white font-display font-bold text-xs tracking-wider uppercase px-6 py-3.5 rounded-full shadow-md hover:-translate-y-0.5 transition-all cursor-pointer inline-flex items-center space-x-2"
+                >
+                  <span>Read Our Full Story</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+
+            {/* Teaser image */}
+            <div className="relative">
+              <img
+                src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop"
+                alt="Smilyx modern digital laboratory"
+                className="rounded-3xl shadow-xl w-full object-cover aspect-square"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-xl border border-slate-100 hidden sm:block max-w-xs space-y-1">
+                <span className="font-display font-black text-2xl text-brand-600">100%</span>
+                <p className="text-slate-800 text-xs font-bold">Orthodontist-Designed</p>
+                <p className="text-slate-500 text-[10px] leading-relaxed">No unsupervised algorithms. Absolute biological security.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* f) Mid-page CTA banner */}
+      <CTASection
+        onSubmitCaseClick={handleCtaClick}
+        onScheduleMeetingClick={handleScheduleClick}
+      />
+
+      {/* g) Testimonials */}
+      <section id="testimonials-section" className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+            <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">
+              Clinical Partners & Patients
+            </span>
+            <h2 className="font-display font-black text-3xl sm:text-4xl text-slate-900 tracking-tight">
+              What Our Community Says
+            </h2>
+            <p className="text-slate-500 text-sm leading-relaxed">
+              We empower orthodontic practices and direct dental members alike, prioritizing biological safety and high-contrast, flawless aesthetics.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial) => (
+              <div key={testimonial.id}>
+                <TestimonialCard testimonial={testimonial} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* h) Contact section */}
+      <section id="home-contact-form" className="py-24 bg-slate-50 relative overflow-hidden">
+        {/* Abstract background blobs to simulate high-end design */}
+        <div className="absolute top-1/2 left-10 w-96 h-96 bg-brand-100/40 rounded-full filter blur-3xl" />
+        <div className="absolute bottom-1/2 right-10 w-96 h-96 bg-teal-100/30 rounded-full filter blur-3xl" />
+
+        <div className="max-w-3xl mx-auto px-4 relative z-10">
+          <InteractiveForm defaultEnquiryType="general" />
+        </div>
+      </section>
+    </div>
+  );
+}

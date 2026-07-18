@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  /* Clinical blue spectrum — the single interactive hue. Blueprint-grade, not spa-pastel. */
+  --color-brand-50: #caf0f8;
+  --color-brand-100: #ade8f4;
+  --color-brand-200: #9ee4f1;
+  --color-brand-300: #90e0ef;
+  --color-brand-400: #48cae4;
+  --color-brand-500: #00b4d8;
+  --color-brand-600: #0096c7;
+  --color-brand-700: #0077b6;
+  --color-brand-800: #023e8a;
+  --color-brand-900: #03045e;
+
+  /* Cool clinical slate for light/mid neutrals; the dark end is anchored in Diagnostic Navy (#03045e) per the Diagnostic-Navy Rule. */
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-850: #0a1442;
+  --color-slate-900: #03045e;
+  --color-slate-950: #020438;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-slate-800);
+    background-color: #f8fafc;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.025em;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Smooth before-after slider styling */
+.before-after-handle {
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+}

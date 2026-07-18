@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-17T00:00:00Z",
+  "title": "Design System: Smilyx Clear Aligners",
+  "extensions": {
+    "colorMeta": {
+      "brand-500": { "role": "primary", "displayName": "Signal Vermilion", "canonical": "oklch(62% 0.17 40)", "tonalRamp": ["#5c1c0e", "#7e2612", "#a03016", "#c23d1c", "#d94d26", "#e85f34", "#f0713f", "#fbe3d9"] },
+      "brand-600": { "role": "primary", "displayName": "Signal Vermilion Deep", "canonical": "oklch(55% 0.16 38)", "tonalRamp": ["#5c1c0e", "#7e2612", "#a03016", "#c23d1c", "#d94d26", "#e85f34", "#f0713f", "#fdf2ee"] },
+      "ink-900": { "role": "neutral", "displayName": "Diagnostic Ink", "canonical": "oklch(21% 0.006 60)", "tonalRamp": ["#0d0d10", "#17181d", "#242320", "#3b3936", "#524f4b", "#6d6c67", "#9b9a95", "#c4c3bf"] },
+      "canvas": { "role": "neutral", "displayName": "Lab Canvas", "canonical": "oklch(97% 0.001 60)", "tonalRamp": ["#17181d", "#3b3936", "#6d6c67", "#9b9a95", "#c4c3bf", "#dedddb", "#eeeeec", "#f6f6f7"] },
+      "status-mild": { "role": "tertiary", "displayName": "Mild Teal", "canonical": "oklch(52% 0.09 180)", "tonalRamp": [] },
+      "status-moderate": { "role": "tertiary", "displayName": "Moderate Amber", "canonical": "oklch(56% 0.13 60)", "tonalRamp": [] },
+      "status-severe": { "role": "tertiary", "displayName": "Severe Rose", "canonical": "oklch(55% 0.19 12)", "tonalRamp": [] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero and page-title headlines; Outfit 800, often italic on hero." },
+      "headline": { "displayName": "Headline", "purpose": "Section headers and form titles." },
+      "title": { "displayName": "Title", "purpose": "Card titles and dropdown headers." },
+      "body": { "displayName": "Body", "purpose": "All reading copy; Inter, measure 65-75ch." },
+      "label": { "displayName": "Instrument Label", "purpose": "Mono uppercase metadata — numbers, timings, tags. Data only." }
+    },
+    "shadows": [
+      { "name": "resting-card", "value": "0 1px 2px rgba(15,23,42,0.04)", "purpose": "Default content-card separation from canvas." },
+      { "name": "hover-lift", "value": "0 20px 25px -5px rgba(15,23,42,0.10)", "purpose": "Cards and tiles on hover, with translateY(-2px)." },
+      { "name": "accent-glow", "value": "0 10px 15px -3px rgba(194,61,28,0.20)", "purpose": "Faint brand-hue glow under primary buttons." },
+      { "name": "form-panel", "value": "0 25px 50px -12px rgba(15,23,42,0.25)", "purpose": "The lab form — most elevated element on its page." }
+    ],
+    "motion": [
+      { "name": "ease-out-quart", "value": "cubic-bezier(0.25, 1, 0.5, 1)", "purpose": "Preferred easing for reveals and lifts — exponential ease-out, no bounce." },
+      { "name": "state-fast", "value": "200ms", "purpose": "Button/nav hover and focus transitions." },
+      { "name": "panel-medium", "value": "300ms", "purpose": "Header, drawer, and dropdown transitions." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "container", "value": "80rem (max-w-7xl)" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single call to action; every screen's path to Submit a Trial Case.",
+      "html": "<button class=\"ds-btn-primary\">Submit Trial Case <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14M12 5l7 7-7 7\"/></svg></button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: #c23d1c; color: #fff; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.75rem 1.5rem; border: none; border-radius: 9999px; box-shadow: 0 10px 15px -3px rgba(194,61,28,0.20); cursor: pointer; transition: background 200ms cubic-bezier(0.25,1,0.5,1), transform 200ms cubic-bezier(0.25,1,0.5,1), box-shadow 200ms; } .ds-btn-primary:hover { background: #a03016; transform: translateY(-2px); box-shadow: 0 20px 25px -5px rgba(194,61,28,0.30); } .ds-btn-primary:focus-visible { outline: 2px solid #d94d26; outline-offset: 2px; }"
+    },
+    {
+      "name": "Nav Link (pill)",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Top-nav item; rest / hover / active pill states.",
+      "html": "<nav class=\"ds-nav\"><button class=\"ds-nav-link ds-active\">Home</button><button class=\"ds-nav-link\">How We Treat</button><button class=\"ds-nav-link\">FAQs</button></nav>",
+      "css": ".ds-nav { display: inline-flex; gap: 0.25rem; } .ds-nav-link { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: #6d6c67; background: transparent; border: none; padding: 0.5rem 1rem; border-radius: 9999px; cursor: pointer; transition: color 200ms, background 200ms; } .ds-nav-link:hover { color: #c23d1c; background: #f7f7f6; } .ds-nav-link.ds-active { color: #c23d1c; background: #fdf2ee; } .ds-nav-link:focus-visible { outline: 2px solid #d94d26; outline-offset: 2px; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Clinical form field with mono-style label and brand focus ring.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-label\" for=\"ds-demo-email\">Email Address <span class=\"ds-req\">*</span></label><input id=\"ds-demo-email\" class=\"ds-input\" type=\"email\" placeholder=\"doctor@example.com\"></div>",
+      "css": ".ds-field { display: flex; flex-direction: column; gap: 0.375rem; max-width: 22rem; } .ds-label { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: #3b3936; } .ds-req { color: #be123c; } .ds-input { background: rgba(247,247,246,0.5); border: 1px solid #dedddb; border-radius: 0.75rem; padding: 0.75rem 1rem; font-family: 'Inter', sans-serif; font-size: 0.875rem; color: #242320; transition: border 200ms, box-shadow 200ms; } .ds-input::placeholder { color: #6d6c67; } .ds-input:focus { outline: none; border-color: #d94d26; box-shadow: 0 0 0 2px #fbe3d9; }"
+    },
+    {
+      "name": "Case Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Content card — flat at rest, lifts on hover, hairline border, soft corners.",
+      "html": "<div class=\"ds-card\"><div class=\"ds-card-head\"><span class=\"ds-meta\">Case Study #01</span><span class=\"ds-chip ds-chip-severe\">Severe Complexity</span></div><h3 class=\"ds-card-title\">Severe Anterior Crowding &amp; Overlap</h3><p class=\"ds-card-body\">22 active stages with precision buccal attachments to guide rotation vectors.</p></div>",
+      "css": ".ds-card { background: #fff; border: 1px solid #eeeeec; border-radius: 1.5rem; padding: 1.5rem; box-shadow: 0 1px 2px rgba(15,23,42,0.04); transition: box-shadow 300ms cubic-bezier(0.25,1,0.5,1), transform 300ms cubic-bezier(0.25,1,0.5,1); max-width: 22rem; } .ds-card:hover { box-shadow: 0 20px 25px -5px rgba(15,23,42,0.10); transform: translateY(-2px); } .ds-card-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem; } .ds-meta { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.1em; color: #6d6c67; } .ds-chip { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 0.625rem; padding: 0.125rem 0.5rem; border-radius: 9999px; border: 1px solid; } .ds-chip-severe { background: #fff1f2; color: #be123c; border-color: #ffe4e6; } .ds-card-title { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.125rem; line-height: 1.35; color: #17181d; margin: 0.25rem 0; } .ds-card-body { font-family: 'Inter', sans-serif; font-size: 0.8125rem; line-height: 1.6; color: #524f4b; margin: 0; }"
+    },
+    {
+      "name": "Timing Eyebrow (glass pill)",
+      "kind": "chip",
+      "refersTo": "label",
+      "description": "Brand-tinted glass pill carrying a mono timing label — the signature instrumentation detail.",
+      "html": "<span class=\"ds-eyebrow\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M12 6v6l4 2\"/></svg> Full setup in 24 hours</span>",
+      "css": ".ds-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(217,77,38,0.12); border: 1px solid rgba(217,77,38,0.30); color: #a03016; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.5rem 1rem; border-radius: 9999px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Precision Lab",
+    "overview": "Smilyx is a clear-aligner fabrication lab, and the interface should read like the inside of one: clean instrument surfaces, exact readouts, and a clinical calm that signals these people measure things to the micron. The system speaks clinician-to-clinician. Its job is to make a practitioner believe, before they submit a case, that the setup design and fabrication behind the screen are as rigorous as the copy claims. Confidence comes from exactness — precise numbers, monospace data labels, generous whitespace — not from decoration. The dominant material is bright, clinical white and near-white canvas layered over a warm graphite ink. A single signal-vermilion brand hue — the color of a calibration mark on a lab instrument — carries interactive intent and the diagnostic accents. The warm signal on a graphite field clears the sky-blue dental-template trap and fights the sterile / lifeless failure mode of pure clinical neutrals.",
+    "keyCharacteristics": [
+      "Bright clinical white surfaces on a warm near-white canvas; depth from soft shadow, not heavy chrome.",
+      "One signal-vermilion hue owns all interaction; neutrals are warm graphite, never cool slate or cream.",
+      "Monospace metadata as the signature of instrumentation.",
+      "Fully rounded pills for actions and nav; large soft-cornered containers for content.",
+      "Restrained motion: hover lifts, gentle reveals, nothing bouncy."
+    ],
+    "rules": [
+      { "name": "The One-Hue Rule", "body": "Signal vermilion is the only chromatic accent in the interface chrome. Buttons, links, active states, focus rings — all one hue. Status teal/amber/rose are data, not decoration.", "section": "colors" },
+      { "name": "The Warm-Graphite Rule", "body": "Every neutral is warm graphite (chroma near zero, a hair toward the vermilion), never cool slate and never cream/beige. Graphite ties the neutrals to the signal hue.", "section": "colors" },
+      { "name": "The Instrument-Label Rule", "body": "Monospace is reserved for short precise metadata — numbers, timings, IDs, tags. Never set body copy, headings, or sentences in mono.", "section": "typography" },
+      { "name": "The Geometric-Headline Rule", "body": "Headings are always the display family at weight 700-800 with tracking <= -0.02em. Never letter-space headings positive.", "section": "typography" },
+      { "name": "The Flat-At-Rest Rule", "body": "Content surfaces are flat with only a hairline or shadow-sm at rest. Elevation is a response to state, never an ambient default.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep signal vermilion as the single interactive hue — one color a practitioner's eye follows to the case submission.",
+      "Do keep every neutral warm graphite; Lab Canvas (#f6f6f7), never cool slate and never cream or beige.",
+      "Do use brand-600/brand-700 for any vermilion fill under white text; brand-500 is 4.17:1 and fails AA as a button fill.",
+      "Do reserve JetBrains Mono for short precise metadata — numbers, timings, IDs, tags.",
+      "Do keep surfaces flat at rest and elevate only on state change.",
+      "Do verify contrast to WCAG 2.2 AA: body >= 4.5:1, large text >= 3:1, placeholders >= 4.5:1.",
+      "Do use full borders and background tints for emphasis.",
+      "Do give every animation a prefers-reduced-motion alternative.",
+      "Do let real clinical evidence — cases, the before/after slider, named clinicians — carry warmth."
+    ],
+    "donts": [
+      "Don't drift into the generic dental-clinic template: teal/sky-and-white with stock smiling faces and everything over-rounded.",
+      "Don't slide into consumer DTC / gimmicky territory (pastels, hype, subscription-box tone).",
+      "Don't let precision tip into sterile / lifeless hospital software.",
+      "Don't import generic SaaS slop: gradient blobs, hero-metric templates, identical card grids, tracked eyebrows over every section.",
+      "Don't use background-clip:text gradient text or colored border-left/right side-stripes anywhere.",
+      "Don't set body copy, headings, or sentences in monospace — mono is data only.",
+      "Don't use muted graphite body text on a tinted ground below 4.5:1.",
+      "Don't add a second UI accent hue beyond signal vermilion and clinical status colors on data.",
+      "Don't revert any neutral to cool slate or drift it toward cream/beige — graphite ties the neutrals to the vermilion signal.",
+      "Don't pair Outfit with another geometric/humanist sans as a second font — fix the Outfit+Inter pairing via typeset."
+    ]
+  }
+}

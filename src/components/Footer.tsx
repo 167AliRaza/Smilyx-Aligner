@@ -1,0 +1,210 @@
+import { Facebook, Instagram, Linkedin, Phone, Mail, MapPin, Clock, MessageCircle, ArrowUp } from "lucide-react";
+import { officeAddress, officeHours, officeContact } from "../data";
+import Logo from "./Logo";
+
+interface FooterProps {
+  onNavigate: (page: string) => void;
+}
+
+export default function Footer({ onNavigate }: FooterProps) {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleNavClick = (page: string) => {
+    onNavigate(page);
+    scrollToTop();
+  };
+
+  return (
+    <footer id="main-footer" className="bg-slate-900 text-slate-400 pt-16 pb-8 border-t border-slate-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          {/* Brand Info */}
+          <div className="space-y-4">
+            <button
+              id="footer-logo-button"
+              onClick={() => handleNavClick("home")}
+              className="flex items-center text-left group cursor-pointer"
+            >
+              <Logo variant="dark" />
+            </button>
+            <p className="text-sm leading-relaxed text-slate-400 max-w-sm">
+              Precision digital orthodontic setups and state-of-the-art clear aligner therapy designed by board-certified orthodontists for dental partners and direct patients.
+            </p>
+            <div className="flex items-center space-x-3 pt-2">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-slate-800 hover:bg-brand-600 hover:text-white flex items-center justify-center transition-all duration-200 text-slate-400"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-slate-800 hover:bg-brand-600 hover:text-white flex items-center justify-center transition-all duration-200 text-slate-400"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-slate-800 hover:bg-brand-600 hover:text-white flex items-center justify-center transition-all duration-200 text-slate-400"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <a
+                href="https://whatsapp.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-slate-800 hover:bg-brand-600 hover:text-white flex items-center justify-center transition-all duration-200 text-slate-400"
+                aria-label="WhatsApp"
+              >
+                <MessageCircle className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+
+          {/* Contact Details */}
+          <div className="space-y-4">
+            <h3 className="font-display font-bold text-white text-sm uppercase tracking-widest">
+              Contact Details
+            </h3>
+            <ul className="space-y-3 text-sm">
+              <li className="flex items-start space-x-3">
+                <MapPin className="w-5 h-5 text-brand-500 shrink-0 mt-0.5" />
+                <span>{officeAddress}</span>
+              </li>
+              <li className="flex items-center space-x-3">
+                <Phone className="w-5 h-5 text-brand-500 shrink-0" />
+                <a href={`tel:${officeContact.phone}`} className="hover:text-white transition-colors">
+                  {officeContact.phone}
+                </a>
+              </li>
+              <li className="flex items-center space-x-3">
+                <Mail className="w-5 h-5 text-brand-500 shrink-0" />
+                <a href={`mailto:${officeContact.email}`} className="hover:text-white transition-colors">
+                  {officeContact.email}
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Operating Hours */}
+          <div className="space-y-4">
+            <h3 className="font-display font-bold text-white text-sm uppercase tracking-widest">
+              Clinic Hours
+            </h3>
+            <ul className="space-y-3 text-sm">
+              {officeHours.map((item, idx) => (
+                <li key={idx} className="flex items-start space-x-3">
+                  <Clock className="w-5 h-5 text-brand-500 shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-slate-300">{item.days}</p>
+                    <p className="text-slate-400 text-xs">{item.hours}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Quick Links */}
+          <div className="space-y-4">
+            <h3 className="font-display font-bold text-white text-sm uppercase tracking-widest">
+              Sitemap
+            </h3>
+            <div className="grid grid-cols-2 gap-2 text-sm">
+              <button
+                onClick={() => handleNavClick("home")}
+                className="text-left hover:text-white transition-colors py-1 cursor-pointer"
+              >
+                Home
+              </button>
+              <button
+                onClick={() => handleNavClick("how-we-treat")}
+                className="text-left hover:text-white transition-colors py-1 cursor-pointer"
+              >
+                Process
+              </button>
+              <button
+                onClick={() => handleNavClick("invisalign")}
+                className="text-left hover:text-white transition-colors py-1 cursor-pointer"
+              >
+                Invisalign
+              </button>
+              <button
+                onClick={() => handleNavClick("kids-ortho")}
+                className="text-left hover:text-white transition-colors py-1 cursor-pointer"
+              >
+                Kids Ortho
+              </button>
+              <button
+                onClick={() => handleNavClick("adult-ortho")}
+                className="text-left hover:text-white transition-colors py-1 cursor-pointer"
+              >
+                Adult Ortho
+              </button>
+              <button
+                onClick={() => handleNavClick("about-us")}
+                className="text-left hover:text-white transition-colors py-1 cursor-pointer"
+              >
+                About Us
+              </button>
+              <button
+                onClick={() => handleNavClick("contact")}
+                className="text-left hover:text-white transition-colors py-1 cursor-pointer"
+              >
+                Contact
+              </button>
+              <button
+                onClick={() => handleNavClick("blogs")}
+                className="text-left hover:text-white transition-colors py-1 cursor-pointer"
+              >
+                Blogs
+              </button>
+              <button
+                onClick={() => handleNavClick("faqs")}
+                className="text-left hover:text-white transition-colors py-1 cursor-pointer"
+              >
+                FAQs
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Divider & Bottom Section */}
+        <div className="border-t border-slate-850 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+          <p>© {new Date().getFullYear()} Smilyx Clear Aligners. All rights reserved.</p>
+          <div className="flex items-center space-x-6">
+            <button
+              onClick={() => handleNavClick("privacy-policy")}
+              className="hover:text-white transition-colors cursor-pointer"
+            >
+              Privacy Policy
+            </button>
+            <button
+              onClick={() => handleNavClick("faqs")}
+              className="hover:text-white transition-colors cursor-pointer"
+            >
+              Terms of Service
+            </button>
+            <button
+              onClick={scrollToTop}
+              className="bg-slate-800 hover:bg-brand-600 text-white p-2 rounded-full transition-all duration-200 cursor-pointer"
+              aria-label="Scroll to top"
+            >
+              <ArrowUp className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}

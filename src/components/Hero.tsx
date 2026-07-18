@@ -1,0 +1,89 @@
+import { ArrowRight, Clock, Star, Heart } from "lucide-react";
+import { brandHeroImage } from "../data";
+
+interface HeroProps {
+  onCtaClick: () => void;
+}
+
+export default function Hero({ onCtaClick }: HeroProps) {
+  return (
+    <section id="hero-section" className="relative min-h-[90vh] flex items-center justify-center pt-24 pb-16 overflow-hidden">
+      {/* Background Image with elegant overlay */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={brandHeroImage}
+          alt="Modern clinical aligner laboratory"
+          className="w-full h-full object-cover scale-105 animate-subtleZoom"
+          referrerPolicy="no-referrer"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-900/60 to-slate-950/40" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div className="max-w-3xl mx-auto space-y-8 text-center text-white">
+          <div className="inline-flex items-center space-x-2 bg-brand-500/20 backdrop-blur-md px-4 py-2 rounded-full border border-brand-500/30">
+            <Clock className="w-4 h-4 text-brand-400" />
+            <span className="font-mono text-xs font-bold text-brand-300 uppercase tracking-wider">
+              Full setup in 24 hours
+            </span>
+          </div>
+
+          <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-tight text-white italic text-balance">
+            The Digital Path <br />
+            <span className="text-brand-400">
+              To Your Perfect Smile.
+            </span>
+          </h1>
+
+          <p className="text-base sm:text-lg text-slate-200 font-sans max-w-xl mx-auto leading-relaxed">
+            Smilyx Clear Aligners couples digital movement simulations with a custom design plan by our dedicated doctor team, assisted by a certified dental technologist and supervised by licensed orthodontists.
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+            <button
+              id="hero-primary-cta"
+              onClick={onCtaClick}
+              className="bg-brand-600 hover:bg-brand-700 text-white font-display font-bold uppercase tracking-widest text-xs px-8 py-4 rounded-full shadow-lg shadow-brand-500/20 hover:shadow-xl hover:shadow-brand-500/30 transition-all duration-200 hover:-translate-y-0.5 flex items-center justify-center space-x-2 cursor-pointer"
+            >
+              <span>Submit Trial Case</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+
+            <div className="flex items-center space-x-4 px-2 py-1 justify-center">
+              <div className="flex -space-x-2">
+                <img
+                  className="inline-block h-8 w-8 rounded-full ring-2 ring-slate-900 object-cover"
+                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=80"
+                  alt="Patient portrait"
+                  referrerPolicy="no-referrer"
+                />
+                <img
+                  className="inline-block h-8 w-8 rounded-full ring-2 ring-slate-900 object-cover"
+                  src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=80"
+                  alt="Patient portrait"
+                  referrerPolicy="no-referrer"
+                />
+                <img
+                  className="inline-block h-8 w-8 rounded-full ring-2 ring-slate-900 object-cover"
+                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=80"
+                  alt="Patient portrait"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div className="text-left text-xs">
+                <div className="flex text-amber-400">
+                  <Star className="w-3.5 h-3.5 fill-current" />
+                  <Star className="w-3.5 h-3.5 fill-current" />
+                  <Star className="w-3.5 h-3.5 fill-current" />
+                  <Star className="w-3.5 h-3.5 fill-current" />
+                  <Star className="w-3.5 h-3.5 fill-current" />
+                </div>
+                <span className="text-slate-400 font-semibold">1,200+ transformed smiles</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
