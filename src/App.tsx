@@ -105,10 +105,10 @@ export default function App() {
         <AnimatePresence mode="wait">
           <motion.div
             key={currentPage}
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -15 }}
-            transition={{ duration: 0.32, ease: motionEase }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.42, ease: motionEase }}
             id="page-render-wrapper"
           >
             {renderActivePage()}

@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import Logo from "./Logo";
+import { motionEase } from "./motionPresets";
 
 interface HeaderProps {
   currentPage: string;
@@ -11,6 +13,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +22,27 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+        setIsDropdownOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen]);
 
   const handleLinkClick = (id: string) => {
     onNavigate(id);
@@ -44,7 +68,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
   const isTreatmentActive = treatmentItems.some(item => item.id === currentPage);
 
   // Every page opens with a dark hero → header is transparent on a dark image at rest, use light content.
-  const overHero = !isScrolled;
+  const overHero = !isScrolled && !isOpen;
   const navBase =
     "px-4 py-2 font-display text-xs font-bold uppercase tracking-wider transition-all cursor-pointer rounded-full";
   const navIdle = overHero
@@ -56,12 +80,14 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
     <header
       id="main-header"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-md border-b border-slate-100 py-3"
-          : "bg-transparent py-5"
+        isOpen
+          ? "bg-slate-900 border-b border-white/10 py-4"
+          : isScrolled
+            ? "bg-white/95 backdrop-blur-md shadow-md border-b border-slate-100 py-3"
+            : "bg-transparent py-5"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <button
@@ -69,7 +95,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
             onClick={() => handleLinkClick("home")}
             className="flex items-center group cursor-pointer"
           >
-            <Logo variant={overHero ? "dark" : "light"} />
+            <Logo variant={overHero || isOpen ? "dark" : "light"} />
           </button>
 
           {/* Desktop Nav Links */}
@@ -150,11 +176,13 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
               id="mobile-menu-toggle"
               onClick={() => setIsOpen(!isOpen)}
               className={`p-2 rounded-lg transition-colors cursor-pointer ${
-                overHero
+                overHero || isOpen
                   ? "text-white hover:bg-white/10"
                   : "text-slate-600 hover:text-brand-600 hover:bg-slate-50"
               }`}
-              aria-label="Toggle Menu"
+              aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={isOpen}
+              aria-controls="mobile-drawer"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -162,72 +190,79 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
-      <div
-        id="mobile-drawer"
-        className={`lg:hidden fixed inset-x-0 top-[60px] bg-white border-b border-slate-100 shadow-xl transition-all duration-300 ease-in-out ${
-          isOpen
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 -translate-y-10 pointer-events-none"
-        }`}
-      >
-        <div className="px-4 pt-4 pb-6 space-y-2 bg-white max-h-[80vh] overflow-y-auto">
-          {/* Home */}
-          <button
-            onClick={() => handleLinkClick("home")}
-            className={`w-full text-left px-4 py-3 rounded-xl font-display font-bold text-sm tracking-wide transition-colors cursor-pointer block ${
-              currentPage === "home" ? "text-brand-700 bg-brand-50" : "text-slate-600 hover:text-brand-600 hover:bg-slate-50"
-            }`}
+      {/* Mobile Full-Screen Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            id="mobile-drawer"
+            className="lg:hidden fixed inset-0 z-10 bg-white pt-[76px] flex flex-col"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: shouldReduceMotion ? 0.01 : 0.22, ease: motionEase }}
           >
-            Home
-          </button>
-
-          {/* Treatments Sub-List */}
-          <div className="px-4 py-2 space-y-1 bg-slate-50/50 rounded-xl">
-            <span className="font-mono text-[10px] uppercase tracking-widest text-slate-400 font-bold block mb-1">
-              Treatments
-            </span>
-            {treatmentItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => handleLinkClick(item.id)}
-                className={`w-full text-left px-3 py-2 rounded-lg font-display text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer block ${
-                  currentPage === item.id ? "text-brand-600 bg-brand-50" : "text-slate-500 hover:text-brand-600"
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
-
-          {/* Other Nav Items */}
-          {mainNavItems.slice(1).map((item) => {
-            const isActive = currentPage === item.id;
-            return (
-              <button
-                key={item.id}
-                onClick={() => handleLinkClick(item.id)}
-                className={`w-full text-left px-4 py-3 rounded-xl font-display font-bold text-sm tracking-wide transition-colors cursor-pointer block ${
-                  isActive ? "text-brand-700 bg-brand-50" : "text-slate-600 hover:text-brand-600 hover:bg-slate-50"
-                }`}
-              >
-                {item.label}
-              </button>
-            );
-          })}
-
-          <div className="pt-4 border-t border-slate-100">
-            <button
-              id="mobile-header-cta"
-              onClick={() => handleLinkClick("contact")}
-              className="w-full justify-center bg-brand-600 hover:bg-brand-700 text-white font-display font-bold text-xs tracking-wider uppercase px-6 py-4 rounded-xl shadow-lg shadow-brand-100 transition-all duration-200 flex items-center space-x-2 cursor-pointer"
+            <motion.nav
+              aria-label="Mobile navigation"
+              className="flex-1 overflow-y-auto px-5 pt-6 pb-5"
+              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: -12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: -8 }}
+              transition={{ duration: shouldReduceMotion ? 0.01 : 0.34, ease: motionEase }}
             >
-              <span>Submit Trial Case</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
-      </div>
+              <div className="space-y-1">
+                {mainNavItems.map((item) => {
+                  const isActive = currentPage === item.id;
+                  return (
+                    <button
+                      key={item.id}
+                      onClick={() => handleLinkClick(item.id)}
+                      className={`min-h-12 w-full text-left px-4 py-3 rounded-xl font-display font-bold text-base tracking-wide transition-colors cursor-pointer block ${
+                        isActive
+                          ? "text-brand-800 bg-brand-50"
+                          : "text-slate-700 hover:text-brand-700 hover:bg-slate-50"
+                      }`}
+                    >
+                      {item.label}
+                    </button>
+                  );
+                })}
+              </div>
+
+              <div className="mt-7 rounded-2xl bg-slate-50 px-4 py-4">
+                <span className="font-display text-xs uppercase tracking-wider text-slate-500 font-bold block mb-2">
+                  Treatments
+                </span>
+                <div className="space-y-1">
+                  {treatmentItems.map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => handleLinkClick(item.id)}
+                      className={`min-h-11 w-full text-left px-3 py-2.5 rounded-xl font-display text-sm font-bold transition-colors cursor-pointer block ${
+                        currentPage === item.id
+                          ? "text-brand-800 bg-white"
+                          : "text-slate-600 hover:text-brand-700 hover:bg-white"
+                      }`}
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </motion.nav>
+
+            <div className="border-t border-slate-100 bg-white px-5 pt-4 pb-[calc(1rem+env(safe-area-inset-bottom))]">
+              <button
+                id="mobile-header-cta"
+                onClick={() => handleLinkClick("contact")}
+                className="min-h-12 w-full justify-center bg-brand-600 hover:bg-brand-700 text-white font-display font-bold text-xs tracking-wider uppercase px-6 py-4 rounded-xl transition-all duration-200 flex items-center space-x-2 cursor-pointer"
+              >
+                <span>Submit Trial Case</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
