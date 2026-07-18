@@ -1,8 +1,13 @@
 import { useState } from "react";
 import { Check, ShieldCheck, Sparkles, Smile, Ruler, Users, ChevronRight } from "lucide-react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import Reveal from "../components/Reveal";
+import RevealGroup from "../components/RevealGroup";
+import { motionEase } from "../components/motionPresets";
 import { services } from "../data";
 
 export default function HowWeTreat() {
+  const shouldReduceMotion = useReducedMotion();
   const [activeTab, setActiveTab] = useState("crowding");
 
   const malocclusions = [
@@ -79,7 +84,7 @@ export default function HowWeTreat() {
             referrerPolicy="no-referrer"
           />
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
+        <Reveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
           <div className="inline-flex items-center space-x-2 bg-brand-500/20 text-brand-400 px-4 py-1.5 rounded-full border border-brand-500/20 text-xs font-mono font-bold uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Digital Workflow Design</span>
@@ -90,12 +95,12 @@ export default function HowWeTreat() {
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
             Smilyx Clear Aligners replaces the painful trial-and-error of traditional wire braces with fully simulated, 3D laser-mapped biological clear aligners. Here is our end-to-end design sequence.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* Sequential Treatment Steps */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
-        <div className="text-center max-w-3xl mx-auto space-y-4">
+        <Reveal className="text-center max-w-3xl mx-auto space-y-4">
           <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">
             The 4-Step Cycle
           </span>
@@ -105,9 +110,9 @@ export default function HowWeTreat() {
           <p className="text-slate-500 text-xs sm:text-sm">
             Every Smilyx aligner is manufactured with clinical rigor to guarantee a comfortable, hyper-precise dental fit.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="space-y-16">
+        <RevealGroup className="space-y-16" stagger={0.08}>
           {steps.map((step, idx) => {
             const isEven = idx % 2 === 0;
             return (
@@ -162,7 +167,7 @@ export default function HowWeTreat() {
               </div>
             );
           })}
-        </div>
+        </RevealGroup>
       </section>
 
       {/* Interactive treatable malocclusions list */}
@@ -170,7 +175,7 @@ export default function HowWeTreat() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Explanatory intro */}
-            <div className="lg:col-span-5 space-y-6">
+            <Reveal variant="left" className="lg:col-span-5 space-y-6">
               <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">
                 Anatomic Spectrum
               </span>
@@ -189,10 +194,10 @@ export default function HowWeTreat() {
                   Our materials retain steady orthodontic translation vectors under variable thermal conditions (hot beverages or cold desserts).
                 </p>
               </div>
-            </div>
+            </Reveal>
 
             {/* Interactive Tabbed Box */}
-            <div className="lg:col-span-7 bg-white rounded-3xl shadow-xl p-6 sm:p-10 border border-slate-100 space-y-6">
+            <Reveal variant="right" className="lg:col-span-7 bg-white rounded-3xl shadow-xl p-6 sm:p-10 border border-slate-100 space-y-6">
               {/* Tab headers */}
               <div className="flex flex-wrap gap-2 border-b border-slate-100 pb-4">
                 {malocclusions.map((item) => (
@@ -211,10 +216,18 @@ export default function HowWeTreat() {
               </div>
 
               {/* Tab Body */}
+              <AnimatePresence mode="wait">
               {malocclusions.map((item) => {
                 if (item.id !== activeTab) return null;
                 return (
-                  <div key={item.id} className="space-y-4 animate-fadeIn">
+                  <motion.div
+                    key={item.id}
+                    className="space-y-4"
+                    initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 10 }}
+                    animate={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+                    exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -10 }}
+                    transition={{ duration: shouldReduceMotion ? 0.16 : 0.24, ease: motionEase }}
+                  >
                     <h3 className="font-display font-black text-xl text-slate-900">
                       {item.title} Treatment Plan
                     </h3>
@@ -231,10 +244,11 @@ export default function HowWeTreat() {
                         <span className="font-display font-bold text-sm text-slate-800">{item.recoveryTime}</span>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 );
               })}
-            </div>
+              </AnimatePresence>
+            </Reveal>
           </div>
         </div>
       </section>

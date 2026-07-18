@@ -1,8 +1,10 @@
 import { Shield, Lock, FileText, CheckCircle } from "lucide-react";
+import Reveal from "../components/Reveal";
+import RevealGroup from "../components/RevealGroup";
 
 export default function PrivacyPolicy() {
   return (
-    <div id="privacy-policy-page" className="pb-20 bg-white space-y-16 animate-fadeIn">
+    <div id="privacy-policy-page" className="pb-20 bg-white space-y-16">
       {/* Header */}
       <section className="bg-slate-900 text-white py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-15">
@@ -13,7 +15,7 @@ export default function PrivacyPolicy() {
             referrerPolicy="no-referrer"
           />
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
+        <Reveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
           <div className="inline-flex items-center space-x-2 bg-brand-500/20 text-brand-400 px-4 py-1.5 rounded-full border border-brand-500/20 text-xs font-mono font-bold uppercase tracking-wider">
             <Lock className="w-3.5 h-3.5" />
             <span>Confidentiality Protocol</span>
@@ -24,11 +26,11 @@ export default function PrivacyPolicy() {
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
             How Smilyx Clear Aligners safeguards patient 3D dental datasets, intraoral scans, dental photographs, and personal identity.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* Legal Text Content */}
-      <section className="max-w-3xl mx-auto px-4 text-left font-sans text-slate-600 text-sm sm:text-base leading-relaxed space-y-8">
+      <RevealGroup className="max-w-3xl mx-auto px-4 text-left font-sans text-slate-600 text-sm sm:text-base leading-relaxed space-y-8">
         <div className="flex items-center space-x-3 bg-brand-50/50 p-4 rounded-2xl border border-brand-50">
           <Shield className="w-6 h-6 text-brand-600 shrink-0" />
           <p className="text-xs text-brand-900 font-semibold leading-relaxed">
@@ -68,7 +70,7 @@ export default function PrivacyPolicy() {
           <p>Last Revised: July 12, 2026</p>
           <p className="mt-1">Smilyx Clear Aligners Compliance Division (Singapore)</p>
         </div>
-      </section>
+      </RevealGroup>
     </div>
   );
 }

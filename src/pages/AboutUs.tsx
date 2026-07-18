@@ -1,4 +1,6 @@
 import { Shield, Sparkles, Award, Star, Microscope, Users } from "lucide-react";
+import Reveal from "../components/Reveal";
+import RevealGroup from "../components/RevealGroup";
 
 export default function AboutUs() {
   const team = [
@@ -59,7 +61,7 @@ export default function AboutUs() {
             referrerPolicy="no-referrer"
           />
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
+        <Reveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
           <div className="inline-flex items-center space-x-2 bg-brand-500/20 text-brand-400 px-4 py-1.5 rounded-full border border-brand-500/20 text-xs font-mono font-bold uppercase tracking-wider">
             <Users className="w-3.5 h-3.5" />
             <span>The Smilyx Foundation</span>
@@ -70,13 +72,13 @@ export default function AboutUs() {
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
             Founded by veteran clinical orthodontists, Smilyx Clear Aligners is built upon clinical precision, biocompatible material engineering, and zero-error workflows.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* Narrative Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-          <div className="lg:col-span-6 relative">
+          <Reveal variant="left" className="lg:col-span-6 relative">
             <img
               src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop"
               alt="Smilyx Team at work"
@@ -84,9 +86,9 @@ export default function AboutUs() {
               referrerPolicy="no-referrer"
             />
             <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-brand-100 rounded-full -z-10 filter blur-xl opacity-50" />
-          </div>
+          </Reveal>
 
-          <div className="lg:col-span-6 space-y-6">
+          <Reveal variant="right" className="lg:col-span-6 space-y-6">
             <div className="inline-flex items-center space-x-2 text-brand-600">
               <Sparkles className="w-5 h-5" />
               <span className="font-mono text-xs font-bold uppercase tracking-widest">
@@ -102,14 +104,14 @@ export default function AboutUs() {
             <p className="text-slate-600 text-sm leading-relaxed">
               Smilyx Clear Aligners was created to restore clinical safety. We combined the cost-saving power of modern 3D thermoforming technology with strict medical supervision. Today, we supply clear aligners directly to doctor partners and direct patients, ensuring every case is double-verified for absolute stability.
             </p>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Clinical Values */}
       <section className="bg-slate-50 py-24 border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-          <div className="text-center max-w-3xl mx-auto space-y-4">
+          <Reveal className="text-center max-w-3xl mx-auto space-y-4">
             <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">
               Core Pillars
             </span>
@@ -119,9 +121,9 @@ export default function AboutUs() {
             <p className="text-slate-500 text-xs sm:text-sm">
               We never compromise on diagnostic accuracy or materials. Here are the values that define our medical laboratory.
             </p>
-          </div>
+          </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <RevealGroup className="grid grid-cols-1 md:grid-cols-3 gap-8" childClassName="h-full">
             {values.map((val, idx) => (
               <div
                 key={idx}
@@ -134,13 +136,13 @@ export default function AboutUs() {
                 <p className="text-slate-500 text-xs leading-relaxed">{val.desc}</p>
               </div>
             ))}
-          </div>
+          </RevealGroup>
         </div>
       </section>
 
       {/* Team grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-        <div className="text-center max-w-3xl mx-auto space-y-4">
+        <Reveal className="text-center max-w-3xl mx-auto space-y-4">
           <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">
             The Planning Team
           </span>
@@ -150,9 +152,9 @@ export default function AboutUs() {
           <p className="text-slate-500 text-xs sm:text-sm">
             Our treatment plans are designed by our dedicated clinical doctors and an aligner planning expert, assisted by a certified dental technologist, all under licensed orthodontist supervision.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <RevealGroup className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" childClassName="h-full">
           {team.map((member, idx) => (
             <div
               key={idx}
@@ -178,7 +180,7 @@ export default function AboutUs() {
               </div>
             </div>
           ))}
-        </div>
+        </RevealGroup>
       </section>
     </div>
   );

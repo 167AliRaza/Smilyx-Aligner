@@ -1,19 +1,27 @@
 import { ArrowRight, Clock, Star, Heart } from "lucide-react";
+import { motion, useReducedMotion } from "motion/react";
 import { brandHeroImage } from "../data";
+import Reveal from "./Reveal";
+import { motionEase } from "./motionPresets";
 
 interface HeroProps {
   onCtaClick: () => void;
 }
 
 export default function Hero({ onCtaClick }: HeroProps) {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <section id="hero-section" className="relative min-h-[90vh] flex items-center justify-center pt-24 pb-16 overflow-hidden">
       {/* Background Image with elegant overlay */}
       <div className="absolute inset-0 z-0">
-        <img
+        <motion.img
           src={brandHeroImage}
           alt="Modern clinical aligner laboratory"
-          className="w-full h-full object-cover scale-105 animate-subtleZoom"
+          className="w-full h-full object-cover scale-105"
+          initial={shouldReduceMotion ? false : { scale: 1.08 }}
+          animate={shouldReduceMotion ? undefined : { scale: 1.03 }}
+          transition={{ duration: 8, ease: motionEase }}
           referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-900/60 to-slate-950/40" />
@@ -21,25 +29,29 @@ export default function Hero({ onCtaClick }: HeroProps) {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="max-w-3xl mx-auto space-y-8 text-center text-white">
-          <div className="inline-flex items-center space-x-2 bg-brand-500/20 backdrop-blur-md px-4 py-2 rounded-full border border-brand-500/30">
+          <Reveal variant="scale" className="inline-flex items-center space-x-2 bg-brand-500/20 backdrop-blur-md px-4 py-2 rounded-full border border-brand-500/30">
             <Clock className="w-4 h-4 text-brand-400" />
             <span className="font-mono text-xs font-bold text-brand-300 uppercase tracking-wider">
               Full setup in 24 hours
             </span>
-          </div>
+          </Reveal>
 
-          <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-tight text-white italic text-balance">
+          <Reveal delay={0.08}>
+            <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-tight text-white italic text-balance">
             The Digital Path <br />
             <span className="text-brand-400">
               To Your Perfect Smile.
             </span>
-          </h1>
+            </h1>
+          </Reveal>
 
-          <p className="text-base sm:text-lg text-slate-200 font-sans max-w-xl mx-auto leading-relaxed">
-            Smilyx Clear Aligners couples digital movement simulations with a custom design plan by our dedicated doctor team, assisted by a certified dental technologist and supervised by licensed orthodontists.
-          </p>
+          <Reveal delay={0.14}>
+            <p className="text-base sm:text-lg text-slate-200 font-sans max-w-xl mx-auto leading-relaxed">
+              Smilyx Clear Aligners couples digital movement simulations with a custom design plan by our dedicated doctor team, assisted by a certified dental technologist and supervised by licensed orthodontists.
+            </p>
+          </Reveal>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+          <Reveal delay={0.2} className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <button
               id="hero-primary-cta"
               onClick={onCtaClick}
@@ -81,7 +93,7 @@ export default function Hero({ onCtaClick }: HeroProps) {
                 <span className="text-slate-400 font-semibold">1,200+ transformed smiles</span>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

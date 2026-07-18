@@ -2,6 +2,8 @@ import { useState } from "react";
 import { BookOpen, Calendar, User, Clock, ArrowLeft, ArrowRight, Sparkles, X, ChevronRight } from "lucide-react";
 import { blogPosts } from "../data";
 import { BlogPost } from "../types";
+import Reveal from "../components/Reveal";
+import RevealGroup from "../components/RevealGroup";
 
 export default function Blogs() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -14,7 +16,7 @@ export default function Blogs() {
     : blogPosts.filter((post) => post.category === selectedCategory);
 
   return (
-    <div id="blogs-page" className="pb-20 bg-white space-y-20 animate-fadeIn">
+    <div id="blogs-page" className="pb-20 bg-white space-y-20">
       {/* Page Header */}
       <section className="bg-slate-900 text-white py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-15">
@@ -25,7 +27,7 @@ export default function Blogs() {
             referrerPolicy="no-referrer"
           />
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
+        <Reveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
           <div className="inline-flex items-center space-x-2 bg-brand-500/20 text-brand-400 px-4 py-1.5 rounded-full border border-brand-500/20 text-xs font-mono font-bold uppercase tracking-wider">
             <BookOpen className="w-3.5 h-3.5" />
             <span>Smilyx Publications</span>
@@ -36,12 +38,12 @@ export default function Blogs() {
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
             The biological and physiological facts of clear aligners, biomechanics, dental hygiene, and post-treatment orthodontic retention.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {activeBlog ? (
         /* Blog Article Reader View */
-        <article id="active-article-reader" className="max-w-3xl mx-auto px-4 space-y-8 animate-fadeIn">
+        <RevealGroup id="active-article-reader" className="max-w-3xl mx-auto px-4 space-y-8">
           {/* Back Button */}
           <button
             onClick={() => {
@@ -83,7 +85,7 @@ export default function Blogs() {
             <h1 className="font-display font-black text-3xl sm:text-4xl text-slate-900 tracking-tight leading-snug">
               {activeBlog.title}
             </h1>
-            <p className="text-slate-500 text-sm italic border-l-4 border-brand-500 pl-4 py-1 leading-relaxed">
+            <p className="text-slate-600 text-sm italic rounded-2xl border border-brand-100 bg-brand-50/40 px-4 py-3 leading-relaxed">
               "{activeBlog.excerpt}"
             </p>
           </div>
@@ -124,12 +126,12 @@ export default function Blogs() {
               Back To All Articles
             </button>
           </div>
-        </article>
+        </RevealGroup>
       ) : (
         /* Blog List View */
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           {/* Category Tabs */}
-          <div className="flex flex-wrap items-center justify-start gap-2 border-b border-slate-100 pb-4">
+          <Reveal className="flex flex-wrap items-center justify-start gap-2 border-b border-slate-100 pb-4">
             {categories.map((category) => (
               <button
                 key={category}
@@ -143,10 +145,10 @@ export default function Blogs() {
                 {category}
               </button>
             ))}
-          </div>
+          </Reveal>
 
           {/* Grid of post teasers */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <RevealGroup className="grid grid-cols-1 md:grid-cols-3 gap-8" childClassName="h-full">
             {filteredPosts.map((post) => (
               <div
                 key={post.id}
@@ -204,7 +206,7 @@ export default function Blogs() {
                 </div>
               </div>
             ))}
-          </div>
+          </RevealGroup>
         </section>
       )}
     </div>

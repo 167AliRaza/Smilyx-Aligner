@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { motionEase } from "./components/motionPresets";
 
 // Pages
 import Home from "./pages/Home";
@@ -107,7 +108,7 @@ export default function App() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            transition={{ duration: 0.32, ease: motionEase }}
             id="page-render-wrapper"
           >
             {renderActivePage()}

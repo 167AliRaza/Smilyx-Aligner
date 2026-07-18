@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { Send, CheckCircle2, Upload, Calendar, Clock, Sparkles } from "lucide-react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { motionEase } from "./motionPresets";
 
 interface InteractiveFormProps {
   defaultEnquiryType?: "trial" | "meeting" | "general";
 }
 
 export default function InteractiveForm({ defaultEnquiryType = "general" }: InteractiveFormProps) {
+  const shouldReduceMotion = useReducedMotion();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -80,11 +83,25 @@ export default function InteractiveForm({ defaultEnquiryType = "general" }: Inte
       {/* Decorative top strip */}
       <div className="absolute top-0 inset-x-0 h-2 bg-gradient-to-r from-brand-500 via-brand-600 to-brand-700" />
 
+      <AnimatePresence mode="wait">
       {isSuccess ? (
-        <div id="form-success-state" className="py-12 text-center space-y-6 animate-fadeIn">
-          <div className="w-20 h-20 bg-brand-50 rounded-full flex items-center justify-center mx-auto text-brand-600 animate-bounce">
+        <motion.div
+          key="success"
+          id="form-success-state"
+          className="py-12 text-center space-y-6"
+          initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 18, scale: 0.98 }}
+          animate={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0, scale: 1 }}
+          exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -12, scale: 0.98 }}
+          transition={{ duration: shouldReduceMotion ? 0.18 : 0.3, ease: motionEase }}
+        >
+          <motion.div
+            className="w-20 h-20 bg-brand-50 rounded-full flex items-center justify-center mx-auto text-brand-600"
+            initial={shouldReduceMotion ? false : { scale: 0.92 }}
+            animate={shouldReduceMotion ? undefined : { scale: 1 }}
+            transition={{ duration: 0.32, ease: motionEase }}
+          >
             <CheckCircle2 className="w-12 h-12 stroke-[2.5]" />
-          </div>
+          </motion.div>
           <div className="space-y-2">
             <h3 className="font-display font-extrabold text-2xl text-slate-900">
               Clinical Submission Received!
@@ -105,9 +122,18 @@ export default function InteractiveForm({ defaultEnquiryType = "general" }: Inte
           >
             Submit Another Case
           </button>
-        </div>
+        </motion.div>
       ) : (
-        <form onSubmit={handleSubmit} id="clinical-entry-form" className="space-y-6">
+        <motion.form
+          key="form"
+          onSubmit={handleSubmit}
+          id="clinical-entry-form"
+          className="space-y-6"
+          initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 12 }}
+          animate={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+          exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -12 }}
+          transition={{ duration: shouldReduceMotion ? 0.18 : 0.28, ease: motionEase }}
+        >
           <div className="space-y-2">
             <div className="flex items-center space-x-2 text-brand-600">
               <Sparkles className="w-5 h-5" />
@@ -199,8 +225,16 @@ export default function InteractiveForm({ defaultEnquiryType = "general" }: Inte
           </div>
 
           {/* Conditional Meeting Scheduler inputs */}
+          <AnimatePresence>
           {formData.enquiryType === "meeting" && (
-            <div id="meeting-picker-block" className="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-100 animate-fadeIn">
+            <motion.div
+              id="meeting-picker-block"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-100"
+              initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -8 }}
+              animate={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+              exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -8 }}
+              transition={{ duration: shouldReduceMotion ? 0.16 : 0.24, ease: motionEase }}
+            >
               <div className="space-y-1.5">
                 <label htmlFor="meetingDate-input" className="flex items-center space-x-1.5 text-xs font-bold text-slate-700 uppercase tracking-wider">
                   <Calendar className="w-3.5 h-3.5 text-brand-500" />
@@ -235,8 +269,9 @@ export default function InteractiveForm({ defaultEnquiryType = "general" }: Inte
                   <option value="04:00 PM">04:00 PM (SGT)</option>
                 </select>
               </div>
-            </div>
+            </motion.div>
           )}
+          </AnimatePresence>
 
           {/* Clinical File Upload */}
           <div className="space-y-1.5">
@@ -320,8 +355,9 @@ export default function InteractiveForm({ defaultEnquiryType = "general" }: Inte
               </>
             )}
           </button>
-        </form>
+        </motion.form>
       )}
+      </AnimatePresence>
     </div>
   );
 }

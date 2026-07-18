@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { HelpCircle, ChevronDown, ChevronUp, Sparkles, Smile } from "lucide-react";
 import { FAQs } from "../data";
+import Reveal from "../components/Reveal";
+import RevealGroup from "../components/RevealGroup";
 
 export default function FAQsPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
@@ -17,7 +19,7 @@ export default function FAQsPage() {
   };
 
   return (
-    <div id="faqs-page" className="pb-20 bg-white space-y-20 animate-fadeIn">
+    <div id="faqs-page" className="pb-20 bg-white space-y-20">
       {/* Page Header */}
       <section className="bg-slate-900 text-white py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-15">
@@ -28,7 +30,7 @@ export default function FAQsPage() {
             referrerPolicy="no-referrer"
           />
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
+        <Reveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
           <div className="inline-flex items-center space-x-2 bg-brand-500/20 text-brand-400 px-4 py-1.5 rounded-full border border-brand-500/20 text-xs font-mono font-bold uppercase tracking-wider">
             <HelpCircle className="w-3.5 h-3.5" />
             <span>Support Helpdesk</span>
@@ -39,13 +41,13 @@ export default function FAQsPage() {
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
             Get answers to dental inquiries, clinical workflows, and manufacturing details of Smilyx Orthodontic Clear Aligners.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* Accordion List */}
       <section className="max-w-4xl mx-auto px-4 space-y-10">
         {/* Category Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 border-b border-slate-100 pb-4">
+        <Reveal className="flex flex-wrap items-center justify-center gap-2 border-b border-slate-100 pb-4">
           {categories.map((category) => (
             <button
               key={category}
@@ -62,10 +64,10 @@ export default function FAQsPage() {
               {category}
             </button>
           ))}
-        </div>
+        </Reveal>
 
         {/* Accordions */}
-        <div className="space-y-4">
+        <RevealGroup className="space-y-4">
           {filteredFAQs.map((faq, idx) => {
             const isExpanded = expandedIndex === idx;
             return (
@@ -110,10 +112,10 @@ export default function FAQsPage() {
               </div>
             );
           })}
-        </div>
+        </RevealGroup>
 
         {/* Missing Question Teaser */}
-        <div className="bg-brand-50/30 border border-brand-50 rounded-3xl p-8 text-center space-y-4 max-w-xl mx-auto">
+        <Reveal variant="scale" className="bg-brand-50/30 border border-brand-50 rounded-3xl p-8 text-center space-y-4 max-w-xl mx-auto">
           <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto text-brand-600 shadow-sm">
             <Smile className="w-6 h-6" />
           </div>
@@ -123,7 +125,7 @@ export default function FAQsPage() {
               Our clinical setup coordinators are on call to assist. Drop us a note directly on our Lab Portal to connect.
             </p>
           </div>
-        </div>
+        </Reveal>
       </section>
     </div>
   );

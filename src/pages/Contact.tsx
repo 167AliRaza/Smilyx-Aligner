@@ -1,5 +1,7 @@
 import { MapPin, Phone, Mail, Clock, ShieldCheck, HelpCircle } from "lucide-react";
 import InteractiveForm from "../components/InteractiveForm";
+import Reveal from "../components/Reveal";
+import RevealGroup from "../components/RevealGroup";
 import { officeAddress, officeContact, officeHours } from "../data";
 
 interface ContactProps {
@@ -8,7 +10,7 @@ interface ContactProps {
 
 export default function Contact({ defaultEnquiryType = "general" }: ContactProps) {
   return (
-    <div id="contact-page" className="pb-20 bg-white space-y-24 animate-fadeIn">
+    <div id="contact-page" className="pb-20 bg-white space-y-24">
       {/* Page Header */}
       <section className="bg-slate-900 text-white py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-15">
@@ -19,7 +21,7 @@ export default function Contact({ defaultEnquiryType = "general" }: ContactProps
             referrerPolicy="no-referrer"
           />
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
+        <Reveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
           <div className="inline-flex items-center space-x-2 bg-brand-500/20 text-brand-400 px-4 py-1.5 rounded-full border border-brand-500/20 text-xs font-mono font-bold uppercase tracking-wider">
             <Mail className="w-3.5 h-3.5" />
             <span>Connect With Us</span>
@@ -30,19 +32,19 @@ export default function Contact({ defaultEnquiryType = "general" }: ContactProps
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
             Ready to submit digital scans or coordinate a direct clear aligner setup? Complete our lab submission entry form below.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* Main Grid: Form on left, Details on right */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Form Wrap (Left 7 columns) */}
-          <div className="lg:col-span-7">
+          <Reveal variant="left" className="lg:col-span-7">
             <InteractiveForm defaultEnquiryType={defaultEnquiryType} />
-          </div>
+          </Reveal>
 
           {/* Contact Details (Right 5 columns) */}
-          <div className="lg:col-span-5 space-y-8">
+          <Reveal variant="right" className="lg:col-span-5 space-y-8">
             <div className="space-y-2 text-left">
               <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">
                 Office Information
@@ -56,7 +58,7 @@ export default function Contact({ defaultEnquiryType = "general" }: ContactProps
             </div>
 
             {/* Direct Information List */}
-            <div className="space-y-4 text-sm">
+            <RevealGroup className="space-y-4 text-sm">
               <div className="flex items-start space-x-4 bg-slate-50 p-5 rounded-2xl border border-slate-100">
                 <MapPin className="w-6 h-6 text-brand-600 shrink-0 mt-0.5" />
                 <div className="text-left">
@@ -86,7 +88,7 @@ export default function Contact({ defaultEnquiryType = "general" }: ContactProps
                   <span className="text-[10px] text-slate-400">General and partner triage mailbox</span>
                 </div>
               </div>
-            </div>
+            </RevealGroup>
 
             {/* Office Hours Card */}
             <div className="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 space-y-4 text-left border border-slate-800">
@@ -124,7 +126,7 @@ export default function Contact({ defaultEnquiryType = "general" }: ContactProps
                 
                 {/* Pointer marker */}
                 <div className="relative z-10 flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-brand-600 text-white flex items-center justify-center shadow-lg animate-bounce">
+                  <div className="w-12 h-12 rounded-full bg-brand-600 text-white flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-105">
                     <MapPin className="w-6 h-6 stroke-[2]" />
                   </div>
                   <div className="bg-slate-900 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-md mt-2 border border-slate-800">
@@ -137,7 +139,7 @@ export default function Contact({ defaultEnquiryType = "general" }: ContactProps
                 <span className="font-bold text-brand-600">Singapore</span>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
     </div>

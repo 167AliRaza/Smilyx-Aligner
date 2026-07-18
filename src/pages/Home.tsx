@@ -4,6 +4,8 @@ import Hero from "../components/Hero";
 import CTASection from "../components/CTASection";
 import TestimonialCard from "../components/TestimonialCard";
 import InteractiveForm from "../components/InteractiveForm";
+import Reveal from "../components/Reveal";
+import RevealGroup from "../components/RevealGroup";
 import { services, testimonials } from "../data";
 
 interface HomeProps {
@@ -50,18 +52,18 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
       <Hero onCtaClick={handleCtaClick} />
 
       {/* Brand Intro Strip */}
-      <div className="py-5 w-full bg-brand-50 flex items-center justify-center px-6 sm:px-12 border-b border-brand-100 text-center">
+      <Reveal variant="soft" className="py-5 w-full bg-brand-50 flex items-center justify-center px-6 sm:px-12 border-b border-brand-100 text-center">
         <p className="text-brand-900 text-xs sm:text-sm font-medium italic">
           "Detailed protocols. Streamlined workflow. Minimal errors. Smilyx is the preferred partner for clinical excellence."
         </p>
-      </div>
+      </Reveal>
 
       {/* b) Brand intro strip */}
       <section id="brand-intro-strip" className="py-20 bg-white border-b border-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Supporting Image */}
-            <div className="relative group">
+            <Reveal variant="left" className="relative group">
               <div className="absolute -inset-2 bg-gradient-to-r from-brand-500 to-teal-500 rounded-3xl blur-xl opacity-10 group-hover:opacity-20 transition-all duration-300" />
               <img
                 src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=800&auto=format&fit=crop"
@@ -75,10 +77,10 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
                   Zero Error Protocol
                 </span>
               </div>
-            </div>
+            </Reveal>
 
             {/* Intro Copy */}
-            <div className="space-y-6">
+            <Reveal variant="right" className="space-y-6">
               <div className="inline-flex items-center space-x-2 text-brand-600">
                 <Sparkles className="w-5 h-5" />
                 <span className="font-mono text-xs font-bold uppercase tracking-widest">
@@ -102,7 +104,7 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
                   <span className="text-slate-500 text-xs font-semibold">Average setup review</span>
                 </div>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -110,7 +112,7 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
       {/* c) "Our Services" section */}
       <section id="our-services-section" className="py-24 bg-slate-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+          <Reveal className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div className="space-y-4 text-left">
               <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">
                 What We Provide
@@ -129,9 +131,9 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
               <span>Learn Our Entire Process</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
-          </div>
+          </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <RevealGroup className="grid grid-cols-1 md:grid-cols-3 gap-8" childClassName="h-full">
             {services.map((service) => (
               <div
                 key={service.id}
@@ -166,14 +168,14 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
                 </div>
               </div>
             ))}
-          </div>
+          </RevealGroup>
         </div>
       </section>
 
       {/* d) Treatment Options Overview */}
       <section id="treatment-options-overview" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+          <Reveal className="text-center max-w-3xl mx-auto space-y-4 mb-16">
             <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">
               Treatment Options
             </span>
@@ -183,9 +185,9 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
             <p className="text-slate-500 text-sm leading-relaxed">
               We combine advanced clinical technology and professional care to provide treatment options suited to kids, teens, and adults alike.
             </p>
-          </div>
+          </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <RevealGroup className="grid grid-cols-1 md:grid-cols-3 gap-8" childClassName="h-full">
             {/* Invisalign Card */}
             <div className="bg-slate-50 rounded-3xl p-6 border border-slate-100 flex flex-col justify-between hover:border-brand-200 hover:shadow-lg transition-all duration-300">
               <div className="space-y-4">
@@ -257,7 +259,7 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
                 Learn More
               </button>
             </div>
-          </div>
+          </RevealGroup>
         </div>
       </section>
 
@@ -266,7 +268,7 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Copy teaser */}
-            <div className="space-y-6">
+            <Reveal variant="left" className="space-y-6">
               <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">
                 Meet Smilyx
               </span>
@@ -295,10 +297,10 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
-            </div>
+            </Reveal>
 
             {/* Teaser image */}
-            <div className="relative">
+            <Reveal variant="right" className="relative">
               <img
                 src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop"
                 alt="Smilyx modern digital laboratory"
@@ -310,7 +312,7 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
                 <p className="text-slate-800 text-xs font-bold">Orthodontist-Designed</p>
                 <p className="text-slate-500 text-[10px] leading-relaxed">No unsupervised algorithms. Absolute biological security.</p>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -324,7 +326,7 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
       {/* g) Testimonials */}
       <section id="testimonials-section" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+          <Reveal className="text-center max-w-3xl mx-auto space-y-4 mb-16">
             <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">
               Clinical Partners & Patients
             </span>
@@ -334,15 +336,15 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
             <p className="text-slate-500 text-sm leading-relaxed">
               We empower orthodontic practices and direct dental members alike, prioritizing biological safety and high-contrast, flawless aesthetics.
             </p>
-          </div>
+          </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <RevealGroup className="grid grid-cols-1 md:grid-cols-3 gap-8" childClassName="h-full">
             {testimonials.map((testimonial) => (
-              <div key={testimonial.id}>
+              <div key={testimonial.id} className="h-full">
                 <TestimonialCard testimonial={testimonial} />
               </div>
             ))}
-          </div>
+          </RevealGroup>
         </div>
       </section>
 
@@ -352,9 +354,9 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
         <div className="absolute top-1/2 left-10 w-96 h-96 bg-brand-100/40 rounded-full filter blur-3xl" />
         <div className="absolute bottom-1/2 right-10 w-96 h-96 bg-teal-100/30 rounded-full filter blur-3xl" />
 
-        <div className="max-w-3xl mx-auto px-4 relative z-10">
+        <Reveal variant="scale" className="max-w-3xl mx-auto px-4 relative z-10">
           <InteractiveForm defaultEnquiryType="general" />
-        </div>
+        </Reveal>
       </section>
     </div>
   );

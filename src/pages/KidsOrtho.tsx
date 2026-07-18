@@ -1,8 +1,10 @@
 import { Smile, CheckCircle, ShieldAlert, Award, Star, Clock } from "lucide-react";
+import Reveal from "../components/Reveal";
+import RevealGroup from "../components/RevealGroup";
 
 export default function KidsOrtho() {
   return (
-    <div id="kids-ortho-page" className="pb-20 bg-white space-y-24 animate-fadeIn">
+    <div id="kids-ortho-page" className="pb-20 bg-white space-y-24">
       {/* Hero Banner */}
       <section className="bg-slate-900 text-white py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
@@ -13,7 +15,7 @@ export default function KidsOrtho() {
             referrerPolicy="no-referrer"
           />
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6">
+        <Reveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6">
           <div className="inline-flex items-center space-x-2 bg-brand-500/20 text-brand-300 px-4 py-1.5 rounded-full border border-brand-500/20 text-xs font-mono font-bold uppercase tracking-wider">
             <Smile className="w-3.5 h-3.5" />
             <span>Early Interceptive Orthodontics</span>
@@ -24,13 +26,13 @@ export default function KidsOrtho() {
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
             Phase 1 early screening and structural guidance. Correcting skeletal growth, thumb habits, and jaw width discrepancies before permanent adult teeth erupt.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* Main Philosophy */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="relative">
+          <Reveal variant="left" className="relative">
             <img
               src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800"
               alt="Child at orthodontic exam"
@@ -42,9 +44,9 @@ export default function KidsOrtho() {
               <h4 className="font-display font-bold text-slate-900 text-sm">Ages 7 and Up</h4>
               <p className="text-slate-500 text-xs mt-1">The American Association of Orthodontists recommends a screening by age 7.</p>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="space-y-6 text-left">
+          <Reveal variant="right" className="space-y-6 text-left">
             <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">Phase 1 Intervention</span>
             <h2 className="font-display font-black text-3xl sm:text-4xl text-slate-900 tracking-tight leading-none">
               Guidance as They Grow.
@@ -75,20 +77,20 @@ export default function KidsOrtho() {
                 </div>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Red flags table */}
       <section className="bg-slate-50 py-20 border-y border-slate-100 text-center">
         <div className="max-w-4xl mx-auto px-4 space-y-12">
-          <div className="space-y-4">
+          <Reveal className="space-y-4">
             <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">Observation Check</span>
             <h2 className="font-display font-black text-3xl text-slate-900 tracking-tight">Red Flags in Developing Smiles</h2>
             <p className="text-slate-500 text-xs">If you notice any of these signs in your child, an early orthodontic evaluation is strongly advised.</p>
-          </div>
+          </Reveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left">
+          <RevealGroup className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left">
             <div className="bg-white p-6 rounded-2xl border border-slate-100 flex items-start space-x-4">
               <ShieldAlert className="w-5 h-5 text-brand-600 shrink-0 mt-0.5" />
               <div>
@@ -120,7 +122,7 @@ export default function KidsOrtho() {
                 <p className="text-slate-500 text-[11px] sm:text-xs mt-1">Highly vulnerable to dental trauma or chipping from accidental playground falls.</p>
               </div>
             </div>
-          </div>
+          </RevealGroup>
         </div>
       </section>
     </div>

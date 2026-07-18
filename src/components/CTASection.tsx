@@ -1,4 +1,5 @@
 import { ArrowRight, Calendar } from "lucide-react";
+import Reveal from "./Reveal";
 
 interface CTASectionProps {
   onSubmitCaseClick: () => void;
@@ -22,7 +23,7 @@ export default function CTASection({
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/90 to-slate-950" />
       </div>
 
-      <div className="max-w-4xl mx-auto text-center relative z-10 space-y-6">
+      <Reveal className="max-w-4xl mx-auto text-center relative z-10 space-y-6">
         <span className="font-mono text-xs font-bold text-brand-400 uppercase tracking-widest block">
           Streamline Your Workflow Today
         </span>
@@ -52,7 +53,7 @@ export default function CTASection({
             <span>Schedule Meeting</span>
           </button>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }
