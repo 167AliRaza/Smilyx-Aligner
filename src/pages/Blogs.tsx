@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BookOpen, Calendar, User, Clock, ArrowLeft, ArrowRight, Sparkles, X, ChevronRight } from "lucide-react";
+import { BookOpen, Calendar, User, Clock, ArrowLeft, ArrowRight, X, ChevronRight } from "lucide-react";
 import { blogPosts } from "../data";
 import { BlogPost } from "../types";
 import Reveal from "../components/Reveal";
@@ -36,7 +36,7 @@ export default function Blogs() {
             Clinical Insights & Care Guides
           </h1>
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            The biological and physiological facts of clear aligners, biomechanics, dental hygiene, and post-treatment orthodontic retention.
+            Practical notes on clear aligners, biomechanics, dental hygiene, and post-treatment retention.
           </p>
         </Reveal>
       </section>
@@ -108,10 +108,10 @@ export default function Blogs() {
           <div className="prose prose-slate max-w-none text-slate-700 text-sm sm:text-base leading-relaxed space-y-6 pt-4 border-t border-slate-100 font-sans">
             <p>{activeBlog.content}</p>
             <p className="text-slate-600">
-              By maintaining consistent, micro-calculated dental translations, we avoid unnecessary biological root strain. Smilyx aligners are specifically hand-finished to ensure you don't suffer standard consumer aligner side effects, such as gingival recession or structural misalignment.
+              Clear aligner treatment works best when tooth movements are planned in small, controlled stages. Smilyx aligners are hand-finished to support comfort and reduce avoidable soft-tissue irritation.
             </p>
             <p className="text-slate-600">
-              Before commencing any clear aligner treatment, we heavily insist that you secure a comprehensive 3D color intraoral examination to rule out underlying periodontal or root resorption factors. Check out our 'How We Treat' module to learn about our medical safety baseline mapping.
+              Before starting clear aligner treatment, we recommend a full intraoral scan and periodontal review to confirm that the teeth and supporting tissues are ready for movement. Visit How We Treat to see how we build the clinical baseline.
             </p>
           </div>
 

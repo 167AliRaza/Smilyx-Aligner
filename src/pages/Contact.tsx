@@ -30,7 +30,7 @@ export default function Contact({ defaultEnquiryType = "general" }: ContactProps
             Clinical Lab Portal
           </h1>
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            Ready to submit digital scans or coordinate a direct clear aligner setup? Complete our lab submission entry form below.
+            Submit digital scans, request a trial setup, or book a design meeting with our orthodontic planning team.
           </p>
         </Reveal>
       </section>
@@ -53,7 +53,7 @@ export default function Contact({ defaultEnquiryType = "general" }: ContactProps
                 Our Singapore Headquarters
               </h2>
               <p className="text-slate-500 text-xs leading-relaxed">
-                Smilyx clinical design laboratories are fully certified, clean-room environments. We operate under strict quality management (ISO 13485) and data privacy standards.
+                Smilyx clinical design laboratories follow quality management and data privacy standards for digital orthodontic records.
               </p>
             </div>
 
@@ -85,7 +85,7 @@ export default function Contact({ defaultEnquiryType = "general" }: ContactProps
                   <a href={`mailto:${officeContact.email}`} className="text-brand-600 hover:text-brand-700 text-xs font-semibold block mt-1">
                     {officeContact.email}
                   </a>
-                  <span className="text-[10px] text-slate-400">General and partner triage mailbox</span>
+                  <span className="text-[10px] text-slate-400">General and partner mailbox</span>
                 </div>
               </div>
             </RevealGroup>

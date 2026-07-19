@@ -15,14 +15,14 @@ export default function Logo({
 }: LogoProps) {
   const isDark = variant === "dark";
 
-  // Clinical-blue mark on cool neutrals — matches the design-system Precision-Blue Rule.
+  // Clinical-blue mark on cool neutrals. Matches the design-system Precision-Blue Rule.
   // Theme-based colors for the wordmark
   const primaryTextColor = isDark ? "text-white" : "text-slate-900";
   const secondaryTextColor = isDark ? "text-slate-300" : "text-slate-500";
 
   return (
     <div className={`flex items-center space-x-3.5 ${className}`}>
-      {/* High-Fidelity SVG Icon — clinical-blue circle with the tooth mark */}
+      {/* High-Fidelity SVG Icon with the clinical-blue circle and tooth mark */}
       <svg
         viewBox="0 0 100 100"
         className="w-11 h-11 shrink-0 select-none overflow-visible"
@@ -89,4 +89,3 @@ export default function Logo({
     </div>
   );
 }
-

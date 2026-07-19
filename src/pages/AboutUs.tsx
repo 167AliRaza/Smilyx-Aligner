@@ -1,4 +1,4 @@
-import { Shield, Sparkles, Award, Star, Microscope, Users } from "lucide-react";
+import { Shield, Award, Star, Microscope, Users } from "lucide-react";
 import Reveal from "../components/Reveal";
 import RevealGroup from "../components/RevealGroup";
 
@@ -7,26 +7,26 @@ export default function AboutUs() {
     {
       name: "Dr. Marcus Vance, DDS, MS",
       role: "Supervising Orthodontist",
-      bio: "Veteran board-certified orthodontist with over 18 years of experience. Actively reviews and supervises every individual custom staging plan for absolute safety.",
+      bio: "Board-certified orthodontist with over 18 years of experience. Reviews and supervises custom staging plans for clinical safety.",
       image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=300&auto=format&fit=crop"
     },
  
     {
       name: "Dr. Amanda Ross, DDS",
       role: "Clinical Treatment Doctor",
-      bio: "Experienced clinician dedicated to clinical validation, patient assessment, and personalized biomechanical safety controls.",
+      bio: "Experienced clinician focused on case validation, patient assessment, and biomechanical safety checks.",
       image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=300&auto=format&fit=crop"
     },
     {
       name: "Alex Mercer, CO",
       role: "Lead Aligner Planning Expert",
-      bio: "Specialist in computer-aided staging and polymer behavior, optimizing tooth-movement sequences for rapid, snug, and comfortable seating.",
+      bio: "Specialist in computer-aided staging and polymer behavior, refining tooth-movement sequences for a close and comfortable fit.",
       image: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=300&auto=format&fit=crop"
     },
     {
       name: "Jordan Brooks, CDT",
       role: "Certified Dental Technologist",
-      bio: "High-precision digital design specialist assisting our doctors in sculpting accurate dental alignment plans.",
+      bio: "Digital design specialist who assists doctors with accurate dental alignment plans.",
       image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=300&auto=format&fit=crop"
     }
   ];
@@ -40,12 +40,12 @@ export default function AboutUs() {
     {
       icon: <Microscope className="w-6 h-6 text-brand-600" />,
       title: "Biomaterial Innovation",
-      desc: "Our premium Class-VI PETG polymers are multi-layered to exert a persistent, gentle pressure that avoids root resorption while maintaining clarity."
+      desc: "Our Class-VI PETG polymers are selected for steady, gentle pressure while keeping the trays clear."
     },
     {
       icon: <Shield className="w-6 h-6 text-brand-600" />,
       title: "Micron-Level Precision",
-      desc: "Each clear tray is laser-trimmed exactly to your scalloped gingival margin, eliminating gum irritation, and hand-polished at our laboratory."
+      desc: "Each clear tray is laser-trimmed to the scalloped gingival margin and hand-polished at our laboratory."
     }
   ];
 
@@ -70,7 +70,7 @@ export default function AboutUs() {
             About Us
           </h1>
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            Founded by veteran clinical orthodontists, Smilyx Clear Aligners is built upon clinical precision, biocompatible material engineering, and zero-error workflows.
+            Founded by clinical orthodontists, Smilyx Clear Aligners is built around careful diagnosis, biocompatible materials, and consistent lab workflows.
           </p>
         </Reveal>
       </section>
@@ -89,20 +89,19 @@ export default function AboutUs() {
           </Reveal>
 
           <Reveal variant="right" className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center space-x-2 text-brand-600">
-              <Sparkles className="w-5 h-5" />
+            <div className="inline-flex items-center text-brand-600">
               <span className="font-mono text-xs font-bold uppercase tracking-widest">
                 Our Genesis Story
               </span>
             </div>
             <h2 className="font-display font-extrabold text-3xl text-slate-900 tracking-tight leading-none">
-              Where Technology Meets Real Clinical Expertise.
+              Where Technology Meets Clinical Expertise.
             </h2>
             <p className="text-slate-600 text-sm leading-relaxed">
-              In 2021, our founders realized clear aligner treatments were becoming hyper-commercialized. Tech startups were mailing aligners directly to consumers, skipping basic orthodontic examinations, relying on unsupervised algorithms, and causing serious dental damage.
+              In 2021, our founders saw clear aligner treatment becoming too commercial and too automated. Some direct-to-consumer providers were shipping aligners without complete orthodontic examinations or close doctor supervision.
             </p>
             <p className="text-slate-600 text-sm leading-relaxed">
-              Smilyx Clear Aligners was created to restore clinical safety. We combined the cost-saving power of modern 3D thermoforming technology with strict medical supervision. Today, we supply clear aligners directly to doctor partners and direct patients, ensuring every case is double-verified for absolute stability.
+              Smilyx Clear Aligners was created to bring doctor oversight back into the process. We combine modern 3D thermoforming with structured clinical review. Today, we support doctor partners and direct patients, with every case checked before treatment moves forward.
             </p>
           </Reveal>
         </div>
@@ -119,7 +118,7 @@ export default function AboutUs() {
               Our Foundational Beliefs
             </h2>
             <p className="text-slate-500 text-xs sm:text-sm">
-              We never compromise on diagnostic accuracy or materials. Here are the values that define our medical laboratory.
+              We put diagnostic accuracy, materials, and clinical review first. These values guide our laboratory.
             </p>
           </Reveal>
 

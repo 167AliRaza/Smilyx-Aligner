@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { HelpCircle, ChevronDown, ChevronUp, Sparkles, Smile } from "lucide-react";
+import { HelpCircle, ChevronDown, ChevronUp, Smile } from "lucide-react";
 import { FAQs } from "../data";
 import Reveal from "../components/Reveal";
 import RevealGroup from "../components/RevealGroup";

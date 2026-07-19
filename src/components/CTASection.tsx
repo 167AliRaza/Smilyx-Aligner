@@ -31,7 +31,7 @@ export default function CTASection({
           Ready to submit your clinical case to us?
         </h2>
         <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
-          Submit your patient’s digital scans (STL) or take advantage of our complimentary trial setup. Our board-certified master orthodontists will map out a custom tooth movement staging plan within 24 hours.
+          Submit your patient’s digital scans (STL) or request a complimentary trial setup. Our orthodontic team will prepare a custom tooth-movement staging plan within 24 hours.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">

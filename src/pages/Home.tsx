@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, ShieldCheck, Sparkles, CheckCircle } from "lucide-react";
+import { ArrowRight, ShieldCheck, CheckCircle } from "lucide-react";
 import Hero from "../components/Hero";
 import CTASection from "../components/CTASection";
 import TestimonialCard from "../components/TestimonialCard";
@@ -81,8 +81,7 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
 
             {/* Intro Copy */}
             <Reveal variant="right" className="space-y-6">
-              <div className="inline-flex items-center space-x-2 text-brand-600">
-                <Sparkles className="w-5 h-5" />
+              <div className="inline-flex items-center text-brand-600">
                 <span className="font-mono text-xs font-bold uppercase tracking-widest">
                   Our Biological Philosophy
                 </span>
@@ -92,7 +91,7 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
                 Predictable Movement. Minimal Errors.
               </h2>
               <p className="text-slate-600 text-sm leading-relaxed max-w-xl">
-                Every custom aligner treatment plan at Smilyx is engineered by our specialized clinical planning team—consisting of dedicated doctors and an aligner expert, assisted by a certified dental technologist—under the active supervision of a licensed master orthodontist. By tracking tooth displacement with high-resolution digital simulations, we produce clear aligners that seat perfectly on the first try. This means fewer treatment mid-course corrections, minimal clinic chair time, and comfortable tooth translations that stay locked in.
+                Every custom aligner plan at Smilyx is prepared by our clinical planning team, including doctors, an aligner expert, and a certified dental technologist, with active supervision from a licensed master orthodontist. We review tooth movement with high-resolution digital simulations so each tray fits accurately and the treatment plan is easier to follow. The result is fewer mid-course corrections, less chair time, and tooth movement that stays within a clinically controlled range.
               </p>
               <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-100">
                 <div>
@@ -121,7 +120,7 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
                 Our Clinical Solutions
               </h2>
               <p className="text-slate-600 text-sm max-w-2xl leading-relaxed">
-                From high-resolution 3D diagnostic mapping to custom hand-polished thermoformed aligners, we power the entire digital orthodontic cycle.
+                From high-resolution 3D diagnostic mapping to hand-polished thermoformed aligners, we support the full digital orthodontic workflow.
               </p>
             </div>
             <button
@@ -180,10 +179,10 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
               Treatment Options
             </span>
             <h2 className="font-display font-black text-3xl sm:text-4xl text-slate-900 tracking-tight italic">
-              Orthodontics Tailored For Every Stage Of Life
+              Orthodontics for Every Stage of Life
             </h2>
             <p className="text-slate-500 text-sm leading-relaxed">
-              We combine advanced clinical technology and professional care to provide treatment options suited to kids, teens, and adults alike.
+              We combine clinical planning, digital records, and careful follow-up for kids, teens, and adults.
             </p>
           </Reveal>
 
@@ -201,7 +200,7 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
                 </div>
                 <h3 className="font-display font-bold text-lg text-slate-900">Invisalign</h3>
                 <p className="text-slate-500 text-xs leading-relaxed">
-                  Clear, comfortable, and completely removable alternative to traditional braces.
+                  A clear, removable alternative to traditional braces.
                 </p>
               </div>
               <button
@@ -249,7 +248,7 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
                 </div>
                 <h3 className="font-display font-bold text-lg text-slate-900">Adult Orthodontics</h3>
                 <p className="text-slate-500 text-xs leading-relaxed">
-                  Discrete treatment options designed specifically to fit your professional life.
+                  Discreet treatment options that fit around professional life.
                 </p>
               </div>
               <button
@@ -273,10 +272,10 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
                 Meet Smilyx
               </span>
               <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight leading-tight">
-                An Orthodontic Lab Crafted for Absolute Accuracy.
+                An Orthodontic Lab Built for Accuracy.
               </h2>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Founded by a veteran team of board-certified orthodontists and biomaterial lab technicians, Smilyx Clear Aligners bridges the gap between high-tech dental diagnostics and physical comfort. We refuse fully automated cookie-cutter aligner algorithms, insisting that every stage is personally checked, customized, and approved by a licensed doctor.
+                Founded by experienced orthodontists and biomaterial lab technicians, Smilyx Clear Aligners connects digital diagnostics with comfortable treatment planning. We do not rely on unsupervised aligner algorithms. Every stage is reviewed, adjusted, and approved by a licensed doctor.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
@@ -310,7 +309,7 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
               <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-xl border border-slate-100 hidden sm:block max-w-xs space-y-1">
                 <span className="font-display font-black text-2xl text-brand-600">100%</span>
                 <p className="text-slate-800 text-xs font-bold">Orthodontist-Designed</p>
-                <p className="text-slate-500 text-[10px] leading-relaxed">No unsupervised algorithms. Absolute biological security.</p>
+                <p className="text-slate-500 text-[10px] leading-relaxed">No unsupervised algorithms. Doctor-reviewed treatment plans.</p>
               </div>
             </Reveal>
           </div>
@@ -334,7 +333,7 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
               What Our Community Says
             </h2>
             <p className="text-slate-500 text-sm leading-relaxed">
-              We empower orthodontic practices and direct dental members alike, prioritizing biological safety and high-contrast, flawless aesthetics.
+              Orthodontic practices and patients use Smilyx for clear planning, careful fit, and outcomes that look natural.
             </p>
           </Reveal>
 

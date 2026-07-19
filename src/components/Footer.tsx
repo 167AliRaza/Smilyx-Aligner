@@ -30,7 +30,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               <Logo variant="dark" />
             </button>
             <p className="text-sm leading-relaxed text-slate-400 max-w-sm">
-              Precision digital orthodontic setups and state-of-the-art clear aligner therapy designed by board-certified orthodontists for dental partners and direct patients.
+              Digital orthodontic setups and clear aligner therapy planned by orthodontists for dental partners and direct patients.
             </p>
             <div className="flex items-center space-x-3 pt-2">
               <a

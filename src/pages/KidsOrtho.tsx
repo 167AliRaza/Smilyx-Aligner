@@ -24,7 +24,7 @@ export default function KidsOrtho() {
             Orthodontics For Kids
           </h1>
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            Phase 1 early screening and structural guidance. Correcting skeletal growth, thumb habits, and jaw width discrepancies before permanent adult teeth erupt.
+            Phase 1 screening and early guidance for jaw growth, oral habits, and crowding risks before all permanent teeth erupt.
           </p>
         </Reveal>
       </section>
@@ -49,31 +49,31 @@ export default function KidsOrtho() {
           <Reveal variant="right" className="space-y-6 text-left">
             <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">Phase 1 Intervention</span>
             <h2 className="font-display font-black text-3xl sm:text-4xl text-slate-900 tracking-tight leading-none">
-              Guidance as They Grow.
+              Guidance While They Grow.
             </h2>
             <p className="text-slate-600 text-sm leading-relaxed">
-              Early interceptive treatment (known as Phase 1) is initiated while children still have a mixture of primary and permanent teeth. The goal is to address serious skeletal growth disharmonies, expand narrow arches to prevent extreme tooth crowding, and create a healthier environment for permanent teeth to erupt naturally.
+              Early interceptive treatment, also called Phase 1, begins while children still have a mix of baby and permanent teeth. The goal is to address jaw growth concerns, guide narrow arches, reduce severe crowding risk, and create better space for permanent teeth to erupt.
             </p>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
                 <CheckCircle className="w-5 h-5 text-brand-600 shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-display font-bold text-slate-900 text-sm">Arch Expansion</h4>
-                  <p className="text-slate-500 text-xs">Gently widen narrow jaws to accommodate erupting teeth and reduce future extraction needs.</p>
+                  <p className="text-slate-500 text-xs">Gently widen narrow arches to make room for erupting teeth.</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <CheckCircle className="w-5 h-5 text-brand-600 shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-display font-bold text-slate-900 text-sm">Habit Cessation</h4>
-                  <p className="text-slate-500 text-xs">Guide tongue-thrusts or persistent thumb-sucking habits to safeguard natural tooth angles.</p>
+                  <p className="text-slate-500 text-xs">Address tongue-thrusting or persistent thumb-sucking habits that can affect tooth position.</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <CheckCircle className="w-5 h-5 text-brand-600 shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-display font-bold text-slate-900 text-sm">Growth Coordination</h4>
-                  <p className="text-slate-500 text-xs">Correct underbites or overbites while bones are soft and actively growing.</p>
+                  <p className="text-slate-500 text-xs">Guide bite concerns while the jaws are still growing.</p>
                 </div>
               </div>
             </div>
@@ -87,7 +87,7 @@ export default function KidsOrtho() {
           <Reveal className="space-y-4">
             <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">Observation Check</span>
             <h2 className="font-display font-black text-3xl text-slate-900 tracking-tight">Red Flags in Developing Smiles</h2>
-            <p className="text-slate-500 text-xs">If you notice any of these signs in your child, an early orthodontic evaluation is strongly advised.</p>
+            <p className="text-slate-500 text-xs">If you notice any of these signs, an early orthodontic evaluation can help decide whether treatment is needed.</p>
           </Reveal>
 
           <RevealGroup className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left">
@@ -95,7 +95,7 @@ export default function KidsOrtho() {
               <ShieldAlert className="w-5 h-5 text-brand-600 shrink-0 mt-0.5" />
               <div>
                 <h4 className="font-display font-bold text-slate-900 text-xs sm:text-sm">Early or Late Tooth Loss</h4>
-                <p className="text-slate-500 text-[11px] sm:text-xs mt-1">Losing baby teeth prematurely or excessively late can disrupt permanent teeth pathways.</p>
+                <p className="text-slate-500 text-[11px] sm:text-xs mt-1">Losing baby teeth too early or too late can affect how permanent teeth come in.</p>
               </div>
             </div>
 

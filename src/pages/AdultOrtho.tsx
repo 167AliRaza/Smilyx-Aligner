@@ -23,7 +23,7 @@ export default function AdultOrtho() {
             Orthodontics For Adults
           </h1>
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            It is never too late to secure a healthy, harmonious, and aesthetically flawless smile. Discrete orthodontic systems designed to fit your professional life.
+            It is never too late to improve bite health, tooth position, and smile confidence. Discreet orthodontic systems designed to fit professional life.
           </p>
         </Reveal>
       </section>
@@ -32,33 +32,33 @@ export default function AdultOrtho() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <Reveal variant="left" className="space-y-6 text-left">
-            <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">Sophisticated Orthodontics</span>
+            <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">Adult Orthodontics</span>
             <h2 className="font-display font-black text-3xl sm:text-4xl text-slate-900 tracking-tight leading-none">
               Designed For Professional Lives.
             </h2>
             <p className="text-slate-600 text-sm leading-relaxed">
-              Orthodontic treatment is highly effective at any age. In fact, over 25% of all orthodontic patients today are adults. Aligning your teeth not only boosts self-confidence, but it also dramatically reduces risks of uneven wear, periodontal pocketing, temporomandibular joint (TMJ) strain, and plaque build-up.
+              Orthodontic treatment can be effective at any age. For adults, aligning the teeth can improve confidence while also helping reduce uneven wear, plaque build-up, periodontal pocketing, and temporomandibular joint strain.
             </p>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
                 <CheckCircle className="w-5 h-5 text-brand-600 shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-display font-bold text-slate-900 text-sm">Invisible Options</h4>
-                  <p className="text-slate-500 text-xs">Utilize Invisalign or premium clear aligners that remain completely discrete in the boardroom.</p>
+                  <p className="text-slate-500 text-xs">Use Invisalign or premium clear aligners that stay discreet at work and in daily life.</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <CheckCircle className="w-5 h-5 text-brand-600 shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-display font-bold text-slate-900 text-sm">Flexible Appointment Cadences</h4>
-                  <p className="text-slate-500 text-xs">Brief clinical check-ins spaced every 8 to 12 weeks to fit busy, demanding corporate schedules.</p>
+                  <p className="text-slate-500 text-xs">Brief clinical check-ins every 8 to 12 weeks, planned around a busy schedule.</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <CheckCircle className="w-5 h-5 text-brand-600 shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-display font-bold text-slate-900 text-sm">Stable Physiological Longevity</h4>
-                  <p className="text-slate-500 text-xs">Prevent future periodontal issues and secure your natural teeth alignment for decades to come.</p>
+                  <h4 className="font-display font-bold text-slate-900 text-sm">Long-Term Stability</h4>
+                  <p className="text-slate-500 text-xs">Support healthier gums, easier cleaning, and a stable bite after treatment.</p>
                 </div>
               </div>
             </div>
@@ -73,8 +73,8 @@ export default function AdultOrtho() {
             />
             <div className="absolute -bottom-6 -right-6 bg-slate-50 border border-slate-100 rounded-2xl p-6 shadow-xl hidden sm:block max-w-xs text-left">
               <Heart className="w-8 h-8 text-brand-600 mb-2" />
-              <h4 className="font-display font-bold text-slate-900 text-sm">Better Bone Health</h4>
-              <p className="text-slate-500 text-xs mt-1">Properly aligned teeth make brushing and flossing highly efficient, safeguarding bone health.</p>
+              <h4 className="font-display font-bold text-slate-900 text-sm">Easier Daily Care</h4>
+              <p className="text-slate-500 text-xs mt-1">Better-aligned teeth can make brushing and flossing easier to maintain.</p>
             </div>
           </Reveal>
         </div>
@@ -83,10 +83,10 @@ export default function AdultOrtho() {
       {/* Advanced Clinical Tech */}
       <section className="bg-slate-50 py-20 border-y border-slate-100 text-center">
         <Reveal className="max-w-4xl mx-auto px-4 space-y-8">
-          <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">No Wait Diagnostic Blueprint</span>
-          <h2 className="font-display font-black text-3xl text-slate-900 tracking-tight">Your 24-Hour Path Commences Now</h2>
+          <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">24-Hour Digital Setup</span>
+          <h2 className="font-display font-black text-3xl text-slate-900 tracking-tight">Your Plan Can Start Within 24 Hours</h2>
           <p className="text-slate-500 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
-            By combining intraoral wands with ultra-fast cloud processing, we generate your personalized tooth movement simulations in under 24 hours. We can begin manufacturing your alignment sequence immediately.
+            We combine intraoral scans with digital planning to prepare a tooth-movement simulation within 24 hours. Once the plan is approved, the aligner sequence can move into production.
           </p>
         </Reveal>
       </section>

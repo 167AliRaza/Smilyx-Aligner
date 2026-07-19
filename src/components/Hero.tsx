@@ -38,9 +38,9 @@ export default function Hero({ onCtaClick }: HeroProps) {
 
           <Reveal delay={0.08}>
             <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-tight text-white italic text-balance">
-            The Digital Path <br />
+            Digital Planning <br />
             <span className="text-brand-400">
-              To Your Perfect Smile.
+              for Clear Aligner Care.
             </span>
             </h1>
           </Reveal>
@@ -90,7 +90,7 @@ export default function Hero({ onCtaClick }: HeroProps) {
                   <Star className="w-3.5 h-3.5 fill-current" />
                   <Star className="w-3.5 h-3.5 fill-current" />
                 </div>
-                <span className="text-slate-400 font-semibold">1,200+ transformed smiles</span>
+                <span className="text-slate-400 font-semibold">1,200+ planned cases</span>
               </div>
             </div>
           </Reveal>

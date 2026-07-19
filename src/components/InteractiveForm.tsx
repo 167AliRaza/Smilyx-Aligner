@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Send, CheckCircle2, Upload, Calendar, Clock, Sparkles } from "lucide-react";
+import { Send, CheckCircle2, Upload, Calendar, Clock } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { motionEase } from "./motionPresets";
 
@@ -107,13 +107,13 @@ export default function InteractiveForm({ defaultEnquiryType = "general" }: Inte
               Clinical Submission Received!
             </h3>
             <p className="text-slate-600 text-sm max-w-md mx-auto leading-relaxed">
-              Thank you. Your enquiry has been routed directly to our laboratory triage. An orthodontic setup coordinator will contact you via email within 4 hours.
+              Thank you. Your enquiry has been sent to our lab team. An orthodontic setup coordinator will contact you by email within 4 hours.
             </p>
           </div>
           {formData.enquiryType === "meeting" && (
             <div className="bg-slate-50 p-4 rounded-2xl max-w-xs mx-auto text-xs border border-slate-100 space-y-1">
               <span className="font-bold text-slate-800">Meeting Scheduled</span>
-              <p className="text-slate-500">We have locked in your placeholder consultation. Watch your inbox for a Google Meet calendar invite.</p>
+              <p className="text-slate-500">We have noted your preferred consultation time. Watch your inbox for a Google Meet calendar invite.</p>
             </div>
           )}
           <button
@@ -135,8 +135,7 @@ export default function InteractiveForm({ defaultEnquiryType = "general" }: Inte
           transition={{ duration: shouldReduceMotion ? 0.18 : 0.28, ease: motionEase }}
         >
           <div className="space-y-2">
-            <div className="flex items-center space-x-2 text-brand-600">
-              <Sparkles className="w-5 h-5" />
+            <div className="flex items-center text-brand-600">
               <span className="font-mono text-xs font-bold uppercase tracking-widest">
                 Clinical Lab Portal
               </span>
@@ -218,7 +217,7 @@ export default function InteractiveForm({ defaultEnquiryType = "general" }: Inte
                 className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-800 text-sm focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-100 transition-all bg-slate-50/50"
               >
                 <option value="trial">Submit Trial Case (Orthodontist Setup)</option>
-                <option value="meeting">Schedule Zoom Design Meeting</option>
+              <option value="meeting">Schedule Design Meeting</option>
                 <option value="general">Patient Treatment Inquiry</option>
               </select>
             </div>
@@ -287,7 +286,7 @@ export default function InteractiveForm({ defaultEnquiryType = "general" }: Inte
                 {fileName ? fileName : "Drag and drop or click to upload files"}
               </span>
               <span className="text-xs text-slate-400 mt-1">
-                Supports .STL, .PLY, .OBJ or high-res orthodontic photographs (max 50MB)
+              Supports .STL, .PLY, .OBJ, or high-resolution orthodontic photographs (max 50MB)
               </span>
               <input
                 type="file"
@@ -346,7 +345,7 @@ export default function InteractiveForm({ defaultEnquiryType = "general" }: Inte
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                 </svg>
-                <span>Processing Medical Data...</span>
+                <span>Submitting...</span>
               </>
             ) : (
               <>

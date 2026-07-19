@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Check, ShieldCheck, Sparkles, Smile, Ruler, Users, ChevronRight } from "lucide-react";
+import { Check, ShieldCheck, Smile, Ruler, Users, ChevronRight } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import Reveal from "../components/Reveal";
 import RevealGroup from "../components/RevealGroup";
@@ -14,28 +14,28 @@ export default function HowWeTreat() {
     {
       id: "crowding",
       title: "Anterior Crowding",
-      desc: "Teeth overlap, rotate, or bunch together due to lack of alveolar ridge space. Corrected via calculated expansion and subtle interproximal alignment vectoring.",
+      desc: "Teeth overlap, rotate, or bunch together when there is not enough space in the arch. We correct this with planned expansion and careful interproximal alignment.",
       recoveryTime: "6 - 11 Months",
       difficulty: "Mild to Severe"
     },
     {
       id: "diastema",
       title: "Diastema & Gaps",
-      desc: "Excessive space between teeth, most prominent between upper central incisors. Rectified using localized translational constriction and post-treatment retention cables.",
+      desc: "Excess spacing between teeth, often most visible between the upper central incisors. We close these spaces with controlled tooth movement and a retention plan after treatment.",
       recoveryTime: "4 - 8 Months",
       difficulty: "Mild to Moderate"
     },
     {
       id: "overbite",
       title: "Deep Overbite",
-      desc: "Upper teeth significantly overlap the lower teeth vertically. Remedied using absolute or relative incisor intrusion vectors combined with molar extrusion.",
+      desc: "Upper teeth overlap the lower teeth more than they should. Treatment may include planned incisor intrusion and controlled posterior tooth movement.",
       recoveryTime: "9 - 14 Months",
       difficulty: "Moderate to Severe"
     },
     {
       id: "relapse",
       title: "Post-Ortho Relapse",
-      desc: "Teeth shift back after forgetting to wear retainers post-traditional braces. Extremely rapid correction utilizing rapid-sequence micro-trays.",
+      desc: "Teeth can shift after braces when retainers are not worn consistently. Mild relapse can often be corrected with a shorter aligner sequence.",
       recoveryTime: "3 - 6 Months",
       difficulty: "Mild"
     }
@@ -53,21 +53,21 @@ export default function HowWeTreat() {
       number: "02",
       title: "Orthodontic Setup & Planning",
       subtitle: "Expert Movement Vectoring",
-      desc: "Your custom clear aligner plan is designed by our specialized team of dedicated doctors and an aligner specialist, assisted by a certified dental technologist, under the direct supervision of a licensed master orthodontist. We use state-of-the-art staging software to simulate the exact force vectors, mapping your optimal progress week by week.",
+      desc: "Your custom clear aligner plan is designed by our clinical doctors and an aligner specialist, assisted by a certified dental technologist, under the direct supervision of a licensed master orthodontist. We use staging software to simulate tooth movement and map progress week by week.",
       image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop"
     },
     {
       number: "03",
       title: "Precise Thermoforming & Trim",
       subtitle: "Medical-Grade Aligner Fabrication",
-      desc: "Using Class-VI biocompatible multi-layer polymers, we 3D-print your dental models at extreme resolution and thermoform each aligner. Each tray is laser-scalloped to match your exact gumline, then hand-polished to guarantee absolute comfort.",
+      desc: "Using Class-VI biocompatible multi-layer polymers, we 3D print the dental models and thermoform each aligner. Each tray is laser-scalloped to match the gumline, then hand-polished for comfort.",
       image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800&auto=format&fit=crop"
     },
     {
       number: "04",
       title: "Active Wear & Monitoring",
-      subtitle: "Your Micro-Transition Journey",
-      desc: "You wear each aligner tray for 22 hours daily, switching to a new stage every 7 to 10 days. As you move through the sequence, your teeth are gently guided into place. We coordinate brief virtual check-ins with our clinical team to ensure absolute safety.",
+      subtitle: "Active Wear Schedule",
+      desc: "You wear each aligner tray for 22 hours daily, switching to a new stage every 7 to 10 days. As you move through the sequence, your teeth are gently guided into place. We coordinate brief virtual check-ins with our clinical team to monitor fit and progress.",
       image: "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=800&auto=format&fit=crop"
     }
   ];
@@ -86,14 +86,13 @@ export default function HowWeTreat() {
         </div>
         <Reveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
           <div className="inline-flex items-center space-x-2 bg-brand-500/20 text-brand-400 px-4 py-1.5 rounded-full border border-brand-500/20 text-xs font-mono font-bold uppercase tracking-wider">
-            <Sparkles className="w-3.5 h-3.5" />
             <span>Digital Workflow Design</span>
           </div>
           <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-none">
             How We Treat
           </h1>
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            Smilyx Clear Aligners replaces the painful trial-and-error of traditional wire braces with fully simulated, 3D laser-mapped biological clear aligners. Here is our end-to-end design sequence.
+            Smilyx Clear Aligners uses digital records, orthodontist review, and carefully staged clear trays to guide tooth movement. Here is the full treatment sequence.
           </p>
         </Reveal>
       </section>
@@ -108,7 +107,7 @@ export default function HowWeTreat() {
             Our Engineered Treatment Sequence
           </h2>
           <p className="text-slate-500 text-xs sm:text-sm">
-            Every Smilyx aligner is manufactured with clinical rigor to guarantee a comfortable, hyper-precise dental fit.
+            Every Smilyx aligner is made through a structured clinical and lab process for a comfortable, accurate fit.
           </p>
         </Reveal>
 
@@ -183,7 +182,7 @@ export default function HowWeTreat() {
                 Anatomical Conditions We Correct
               </h2>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Clear aligners are no longer limited to simple minor straighteness adjustments. Due to advanced multi-force attachment anchoring, Smilyx treatable parameters now cover complex orthodontic structural shifts.
+                Clear aligners are no longer limited to minor straightening. With the right attachments and case planning, Smilyx can support a wider range of orthodontic movements.
               </p>
               <div className="bg-white p-6 rounded-2xl shadow-xs border border-slate-100 space-y-3">
                 <div className="flex items-center space-x-2 text-brand-600">
@@ -191,7 +190,7 @@ export default function HowWeTreat() {
                   <span className="font-bold text-xs text-slate-800">Biomechanical Tolerances</span>
                 </div>
                 <p className="text-slate-500 text-xs">
-                  Our materials retain steady orthodontic translation vectors under variable thermal conditions (hot beverages or cold desserts).
+                  Our materials are selected to maintain steady orthodontic force during normal daily wear.
                 </p>
               </div>
             </Reveal>

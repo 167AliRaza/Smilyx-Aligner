@@ -1,4 +1,4 @@
-import { Shield, Sparkles, Star, CheckCircle, Clock, Heart, Zap } from "lucide-react";
+import { Shield, Star, CheckCircle, Clock, Heart, Zap } from "lucide-react";
 import Reveal from "../components/Reveal";
 import RevealGroup from "../components/RevealGroup";
 
@@ -17,14 +17,13 @@ export default function Invisalign() {
         </div>
         <Reveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6">
           <div className="inline-flex items-center space-x-2 bg-brand-500/20 text-brand-300 px-4 py-1.5 rounded-full border border-brand-500/20 text-xs font-mono font-bold uppercase tracking-wider">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>State-Of-The-Art Clear Aligners</span>
+            <span>Clear Aligner Treatment</span>
           </div>
           <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-tight italic">
             Invisalign Treatment
           </h1>
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            Uncompromised aesthetics and precise tooth movement vectors. The modern clear alternative to traditional wire braces, engineered for comfort and predictable clinical success.
+            A clear alternative to traditional braces, planned for comfort, appearance, and predictable tooth movement.
           </p>
         </Reveal>
       </section>
@@ -37,31 +36,31 @@ export default function Invisalign() {
               Why Clear Aligners?
             </span>
             <h2 className="font-display font-black text-3xl sm:text-4xl text-slate-900 tracking-tight leading-none">
-              A Clear Path to a Confidence-Boosting Smile.
+              A Clear Path to a More Confident Smile.
             </h2>
             <p className="text-slate-600 text-sm leading-relaxed">
-              Invisalign and Smilyx Clear Aligners utilize removable, near-invisible medical polyurethane trays to shift teeth progressively into their ideal positions. By relying on custom thermoformed aligners scanned to your exact teeth boundaries, we eliminate wire pokes, food restrictions, and heavy clinic visits.
+              Invisalign and Smilyx Clear Aligners use removable, clear medical polyurethane trays to guide teeth gradually into better positions. Because each aligner is made from digital records of your teeth, treatment avoids wire pokes, food restrictions, and many emergency visits.
             </p>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
                 <CheckCircle className="w-5 h-5 text-brand-600 shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-display font-bold text-slate-900 text-sm">Completely Removable</h4>
-                  <p className="text-slate-500 text-xs">Take them out to eat your favorite foods, brush, and floss with complete ease.</p>
+                  <p className="text-slate-500 text-xs">Take them out to eat, brush, and floss normally.</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <CheckCircle className="w-5 h-5 text-brand-600 shrink-0 mt-0.5" />
                 <div>
                   <h4 className="font-display font-bold text-slate-900 text-sm">Virtually Invisible</h4>
-                  <p className="text-slate-500 text-xs">High-clarity polymer makes your orthodontic treatment completely discrete.</p>
+                  <p className="text-slate-500 text-xs">High-clarity polymer keeps treatment discreet in daily life.</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <CheckCircle className="w-5 h-5 text-brand-600 shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-display font-bold text-slate-900 text-sm">Pristine Scalloped Fit</h4>
-                  <p className="text-slate-500 text-xs">Laser-trimmed to match your unique gumline perfectly to protect soft tissue.</p>
+                  <h4 className="font-display font-bold text-slate-900 text-sm">Scalloped Fit</h4>
+                  <p className="text-slate-500 text-xs">Laser-trimmed to follow the gumline and protect soft tissue.</p>
                 </div>
               </div>
             </div>
@@ -89,7 +88,7 @@ export default function Invisalign() {
           <Reveal className="max-w-2xl mx-auto space-y-4">
             <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">The Clear Aligner Journey</span>
             <h2 className="font-display font-black text-3xl text-slate-900 tracking-tight">How It Works Step-By-Step</h2>
-            <p className="text-slate-500 text-xs sm:text-sm">We combine digital precision and clinical craftsmanship to ensure your treatment is safe, rapid, and predictable.</p>
+              <p className="text-slate-500 text-xs sm:text-sm">We combine digital records, clinical review, and careful fabrication to keep treatment clear and predictable.</p>
           </Reveal>
 
           <RevealGroup className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left" childClassName="h-full">
@@ -97,7 +96,7 @@ export default function Invisalign() {
               <div className="w-10 h-10 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center font-display font-black text-lg">1</div>
               <h3 className="font-display font-bold text-lg text-slate-900">3D Digital Scan</h3>
               <p className="text-slate-500 text-xs leading-relaxed">
-                We capture a high-resolution 3D record of your dentition using laser intraoral scanners. Absolutely no goopy molds or gagging.
+                We capture a high-resolution 3D record of your teeth using laser intraoral scanners. No putty impressions are needed.
               </p>
             </div>
 
@@ -105,7 +104,7 @@ export default function Invisalign() {
               <div className="w-10 h-10 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center font-display font-black text-lg">2</div>
               <h3 className="font-display font-bold text-lg text-slate-900">24-Hour Treatment Plan</h3>
               <p className="text-slate-500 text-xs leading-relaxed">
-                Our specialized team of dedicated doctors and an aligner planning expert, assisted by an on-staff certified dental technologist, maps your treatment under licensed orthodontist supervision. A complete 3D teeth movement simulation is ready in 24 hours.
+                Our clinical doctors and aligner planning expert, assisted by an on-staff certified dental technologist, map your treatment under licensed orthodontist supervision. A complete 3D tooth-movement simulation is ready in 24 hours.
               </p>
             </div>
 
