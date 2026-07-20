@@ -1,7 +1,12 @@
 node_modules/
+.next/
 build/
 dist/
 coverage/
+.claude/
+.codex/
+.cursor/
+.impeccable/
 .DS_Store
 *.log
 .env*
