@@ -1,6 +1,6 @@
 import { CaseStudy, BlogPost, FAQItem, Testimonial, TreatmentService } from "./types";
 
-export const brandHeroImage = "/src/assets/images/smilyx_hero_banner_1783856560206.jpg";
+export const brandHeroImage = "/images/smilyx-hero-banner.jpg";
 
 export const services: TreatmentService[] = [
   {
@@ -77,6 +77,7 @@ export const caseStudies: CaseStudy[] = [
 export const blogPosts: BlogPost[] = [
   {
     id: "blog-01",
+    slug: "how-clear-aligners-safely-move-teeth",
     title: "How Clear Aligners Safely Move Teeth: The Biomechanics",
     excerpt: "A clear look at bone remodeling, periodontal ligament response, and the controlled forces behind clear aligners.",
     content: "When you wear a new set of clear aligners, the tray applies light, planned pressure to specific teeth. That pressure starts a normal biological process called bone remodeling. On the pressure side, the periodontal ligament compresses and osteoclasts help resorb old bone. On the tension side, osteoblasts help build new bone. Smilyx Clear Aligners are made from medical polyurethane selected to keep these forces controlled and comfortable throughout treatment.",
@@ -92,6 +93,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: "blog-02",
+    slug: "ultimate-retainer-guide",
     title: "The Ultimate Retainer Guide: Protecting Your Smile Long Term",
     excerpt: "Why teeth can shift after treatment and how a clear retention plan helps protect the result.",
     content: "Finishing clear aligner treatment is a major step, but retention is what keeps the result stable. Teeth can shift because periodontal fibers and surrounding bone need time to settle after movement. This is known as post-treatment relapse. To protect your alignment, we recommend a clear thermoformed retainer. Most patients wear it 22 hours a day at first, then move to night-time wear once the supervising doctor confirms the case is stable.",
@@ -107,6 +109,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: "blog-03",
+    slug: "clear-aligners-vs-traditional-braces",
     title: "Clear Aligners vs. Traditional Braces: A Clinical Comparison",
     excerpt: "We compare clarity, oral hygiene, eating freedom, office visits, and overall lifestyle impact to help you decide which treatment fits your path.",
     content: "Metal brackets still have an important role in complex orthodontic and surgical cases. For many mild to moderate cases, clear aligners offer a more convenient option. They are removable, so brushing and flossing are simpler. Food choices are easier because trays come out before meals. Aligners also avoid common bracket issues such as broken wires or soft-tissue irritation. With the right case selection and planning, aligner treatment can be efficient and predictable.",

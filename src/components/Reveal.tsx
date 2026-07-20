@@ -1,3 +1,5 @@
+"use client";
+
 import { motion, useReducedMotion, type HTMLMotionProps } from "motion/react";
 import {
   motionViewport,

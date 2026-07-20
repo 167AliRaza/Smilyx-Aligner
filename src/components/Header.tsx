@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
@@ -67,8 +69,9 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
 
   const isTreatmentActive = treatmentItems.some(item => item.id === currentPage);
 
-  // Every page opens with a dark hero → header is transparent on a dark image at rest, use light content.
-  const overHero = !isScrolled && !isOpen;
+  // Article and fallback routes start on a light surface; all named primary routes begin with a dark hero.
+  const hasDarkHero = currentPage !== "";
+  const overHero = hasDarkHero && !isScrolled && !isOpen;
   const navBase =
     "px-4 py-2 font-display text-xs font-bold uppercase tracking-wider transition-all cursor-pointer rounded-full";
   const navIdle = overHero
@@ -82,7 +85,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isOpen
           ? "bg-slate-900 border-b border-white/10 py-4"
-          : isScrolled
+          : isScrolled || !hasDarkHero
             ? "bg-white/95 backdrop-blur-md shadow-md border-b border-slate-100 py-3"
             : "bg-transparent py-5"
       }`}
@@ -162,7 +165,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
           <div className="hidden lg:flex items-center">
             <button
               id="header-cta-button"
-              onClick={() => handleLinkClick("contact")}
+              onClick={() => handleLinkClick("trial-case")}
               className="bg-brand-600 hover:bg-brand-700 text-white font-display font-bold text-xs tracking-wider uppercase px-6 py-3 rounded-full shadow-lg shadow-brand-500/20 hover:shadow-xl hover:shadow-brand-500/30 transition-all duration-200 hover:-translate-y-0.5 flex items-center space-x-2 cursor-pointer"
             >
               <span>Submit Trial Case</span>
@@ -253,7 +256,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
             <div className="border-t border-slate-100 bg-white px-5 pt-4 pb-[calc(1rem+env(safe-area-inset-bottom))]">
               <button
                 id="mobile-header-cta"
-                onClick={() => handleLinkClick("contact")}
+                onClick={() => handleLinkClick("trial-case")}
                 className="min-h-12 w-full justify-center bg-brand-600 hover:bg-brand-700 text-white font-display font-bold text-xs tracking-wider uppercase px-6 py-4 rounded-xl transition-all duration-200 flex items-center space-x-2 cursor-pointer"
               >
                 <span>Submit Trial Case</span>

@@ -1,3 +1,5 @@
+"use client";
+
 import { Children, type ReactNode } from "react";
 import { motion, useReducedMotion, type HTMLMotionProps, type Variants } from "motion/react";
 import {

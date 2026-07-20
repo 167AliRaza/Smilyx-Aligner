@@ -1,0 +1,10 @@
+{
+  "/page": "app/page.js",
+  "/blogs/page": "app/blogs/page.js",
+  "/blogs/[slug]/page": "app/blogs/[slug]/page.js",
+  "/faqs/page": "app/faqs/page.js",
+  "/about-us/page": "app/about-us/page.js",
+  "/how-we-treat/page": "app/how-we-treat/page.js",
+  "/kids-ortho/page": "app/kids-ortho/page.js",
+  "/adult-ortho/page": "app/adult-ortho/page.js"
+}

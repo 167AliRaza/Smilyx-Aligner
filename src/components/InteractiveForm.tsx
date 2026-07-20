@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import { Send, CheckCircle2, Upload, Calendar, Clock } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";

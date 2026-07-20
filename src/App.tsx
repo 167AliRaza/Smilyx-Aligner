@@ -6,16 +6,16 @@ import Footer from "./components/Footer";
 import { motionEase } from "./components/motionPresets";
 
 // Pages
-import Home from "./pages/Home";
-import HowWeTreat from "./pages/HowWeTreat";
-import Invisalign from "./pages/Invisalign";
-import KidsOrtho from "./pages/KidsOrtho";
-import AdultOrtho from "./pages/AdultOrtho";
-import AboutUs from "./pages/AboutUs";
-import Contact from "./pages/Contact";
-import Blogs from "./pages/Blogs";
-import FAQs from "./pages/FAQs";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Home from "./views/Home";
+import HowWeTreat from "./views/HowWeTreat";
+import Invisalign from "./views/Invisalign";
+import KidsOrtho from "./views/KidsOrtho";
+import AdultOrtho from "./views/AdultOrtho";
+import AboutUs from "./views/AboutUs";
+import Contact from "./views/Contact";
+import Blogs from "./views/Blogs";
+import FAQs from "./views/FAQs";
+import PrivacyPolicy from "./views/PrivacyPolicy";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<string>("home");
@@ -78,7 +78,7 @@ export default function App() {
       case "about-us":
         return <AboutUs />;
       case "contact":
-        return <Contact defaultEnquiryType={contactDefaultCategory} />;
+        return <Contact />;
       case "blogs":
         return <Blogs />;
       case "faqs":

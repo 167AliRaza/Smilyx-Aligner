@@ -1,3 +1,5 @@
+"use client";
+
 import { ArrowRight, Clock, Star, Heart } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import { brandHeroImage } from "../data";

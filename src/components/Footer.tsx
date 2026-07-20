@@ -1,3 +1,5 @@
+"use client";
+
 import { Facebook, Instagram, Linkedin, Phone, Mail, MapPin, Clock, MessageCircle, ArrowUp } from "lucide-react";
 import { officeAddress, officeHours, officeContact } from "../data";
 import Logo from "./Logo";
