@@ -198,7 +198,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
         {isOpen && (
           <motion.div
             id="mobile-drawer"
-            className="lg:hidden fixed inset-0 z-10 bg-white pt-[76px] flex flex-col"
+            className="lg:hidden fixed inset-x-0 top-[76px] bottom-0 z-10 bg-white flex flex-col"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
