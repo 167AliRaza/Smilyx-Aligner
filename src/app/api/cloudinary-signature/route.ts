@@ -4,7 +4,9 @@ import { NextResponse } from "next/server";
 export const runtime = "nodejs";
 
 const UPLOAD_FOLDER = "smilyx-inquiries";
-const UPLOAD_TYPE = "private";
+// `upload` is Cloudinary's public delivery type. The returned secure_url can be
+// opened directly by recipients of the Formspree notification.
+const UPLOAD_TYPE = "upload";
 
 export async function POST() {
   const cloudName = process.env.CLOUDINARY_CLOUD_NAME;

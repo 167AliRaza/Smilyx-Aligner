@@ -69,13 +69,13 @@ export default function InteractiveForm({ defaultEnquiryType = "general" }: Inte
 
     setIsSubmitting(true);
     try {
-      let imagePublicIds: string[] = [];
+      let imageUrls: string[] = [];
       if (files.length) {
         const signatureResponse = await fetch("/api/cloudinary-signature", { method: "POST" });
         const signatureData = await signatureResponse.json();
         if (!signatureResponse.ok) throw new Error(signatureData.error || "Image upload is unavailable.");
 
-        imagePublicIds = await Promise.all(files.map(async (file) => {
+        imageUrls = await Promise.all(files.map(async (file) => {
           const uploadData = new FormData();
           uploadData.append("file", file);
           uploadData.append("api_key", signatureData.apiKey);
@@ -88,15 +88,15 @@ export default function InteractiveForm({ defaultEnquiryType = "general" }: Inte
             body: uploadData,
           });
           const uploadResult = await uploadResponse.json();
-          if (!uploadResponse.ok || !uploadResult.public_id) throw new Error("One or more images could not be uploaded.");
-          return uploadResult.public_id as string;
+          if (!uploadResponse.ok || !uploadResult.secure_url) throw new Error("One or more images could not be uploaded.");
+          return uploadResult.secure_url as string;
         }));
       }
 
       const submissionResponse = await fetch("/api/inquiry", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, imagePublicIds }),
+        body: JSON.stringify({ ...formData, imageUrls }),
       });
       const submissionResult = await submissionResponse.json();
       if (!submissionResponse.ok) throw new Error(submissionResult.error || "We could not submit your inquiry.");

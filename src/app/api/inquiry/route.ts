@@ -10,7 +10,7 @@ type Inquiry = {
   meetingDate?: string;
   meetingTime?: string;
   message?: string;
-  imagePublicIds?: string[];
+  imageUrls?: string[];
 };
 
 const clean = (value: unknown, maxLength = 2000) =>
@@ -36,8 +36,15 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "A valid name and email address are required." }, { status: 400 });
   }
 
-  const imagePublicIds = Array.isArray(body.imagePublicIds)
-    ? body.imagePublicIds.filter((id): id is string => typeof id === "string" && id.startsWith("smilyx-inquiries/")).slice(0, 6)
+  const imageUrls = Array.isArray(body.imageUrls)
+    ? body.imageUrls.filter((url): url is string => {
+        try {
+          const parsed = new URL(url);
+          return parsed.protocol === "https:" && parsed.hostname === "res.cloudinary.com" && parsed.pathname.includes("/image/upload/");
+        } catch {
+          return false;
+        }
+      }).slice(0, 6)
     : [];
 
   const formspreeResponse = await fetch(`https://formspree.io/f/${encodeURIComponent(formId)}`, {
@@ -52,7 +59,7 @@ export async function POST(request: Request) {
       preferred_meeting_date: clean(body.meetingDate, 20),
       preferred_meeting_time: clean(body.meetingTime, 40),
       clinical_instructions: clean(body.message),
-      cloudinary_private_image_ids: imagePublicIds.length ? imagePublicIds.join("\n") : "No images attached",
+      cloudinary_image_urls: imageUrls.length ? imageUrls.join("\n") : "No images attached",
     }),
   });
 
