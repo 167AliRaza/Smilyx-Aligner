@@ -22,7 +22,7 @@ export default function InteractiveForm({ defaultEnquiryType = "general" }: Inte
     agreedToTerms: false
   });
 
-  const [fileName, setFileName] = useState<string | null>(null);
+  const [files, setFiles] = useState<File[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
@@ -40,12 +40,20 @@ export default function InteractiveForm({ defaultEnquiryType = "general" }: Inte
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      setFileName(e.target.files[0].name);
+    const selectedFiles = Array.from(e.target.files ?? []);
+    if (selectedFiles.length > 6) {
+      setErrorMsg("You can upload up to 6 images at a time.");
+      return;
     }
+    if (selectedFiles.some((file) => !file.type.startsWith("image/") || file.size > 10 * 1024 * 1024)) {
+      setErrorMsg("Please choose image files no larger than 10MB each.");
+      return;
+    }
+    setErrorMsg("");
+    setFiles(selectedFiles);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMsg("");
 
@@ -60,9 +68,39 @@ export default function InteractiveForm({ defaultEnquiryType = "general" }: Inte
     }
 
     setIsSubmitting(true);
+    try {
+      let imagePublicIds: string[] = [];
+      if (files.length) {
+        const signatureResponse = await fetch("/api/cloudinary-signature", { method: "POST" });
+        const signatureData = await signatureResponse.json();
+        if (!signatureResponse.ok) throw new Error(signatureData.error || "Image upload is unavailable.");
 
-    // Simulate clinical API submission
-    setTimeout(() => {
+        imagePublicIds = await Promise.all(files.map(async (file) => {
+          const uploadData = new FormData();
+          uploadData.append("file", file);
+          uploadData.append("api_key", signatureData.apiKey);
+          uploadData.append("timestamp", String(signatureData.timestamp));
+          uploadData.append("signature", signatureData.signature);
+          uploadData.append("folder", signatureData.folder);
+          uploadData.append("type", signatureData.type);
+          const uploadResponse = await fetch(`https://api.cloudinary.com/v1_1/${signatureData.cloudName}/image/upload`, {
+            method: "POST",
+            body: uploadData,
+          });
+          const uploadResult = await uploadResponse.json();
+          if (!uploadResponse.ok || !uploadResult.public_id) throw new Error("One or more images could not be uploaded.");
+          return uploadResult.public_id as string;
+        }));
+      }
+
+      const submissionResponse = await fetch("/api/inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, imagePublicIds }),
+      });
+      const submissionResult = await submissionResponse.json();
+      if (!submissionResponse.ok) throw new Error(submissionResult.error || "We could not submit your inquiry.");
+
       setIsSubmitting(false);
       setIsSuccess(true);
       // Reset form
@@ -76,8 +114,11 @@ export default function InteractiveForm({ defaultEnquiryType = "general" }: Inte
         message: "",
         agreedToTerms: false
       });
-      setFileName(null);
-    }, 1800);
+      setFiles([]);
+    } catch (error) {
+      setErrorMsg(error instanceof Error ? error.message : "We could not submit your inquiry. Please try again.");
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -277,7 +318,7 @@ export default function InteractiveForm({ defaultEnquiryType = "general" }: Inte
           {/* Clinical File Upload */}
           <div className="space-y-1.5">
             <span className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
-              Upload Dental Scans / Smile Photos (Optional)
+              Upload Smile Photos (Optional)
             </span>
             <label
               htmlFor="clinical-file-upload"
@@ -285,17 +326,18 @@ export default function InteractiveForm({ defaultEnquiryType = "general" }: Inte
             >
               <Upload className="w-8 h-8 text-slate-400 mb-2" />
               <span className="text-sm font-semibold text-slate-700">
-                {fileName ? fileName : "Drag and drop or click to upload files"}
+                {files.length ? `${files.length} image${files.length === 1 ? "" : "s"} selected` : "Click to choose photos"}
               </span>
               <span className="text-xs text-slate-400 mt-1">
-              Supports .STL, .PLY, .OBJ, or high-resolution orthodontic photographs (max 50MB)
+              JPG, PNG, WEBP, or HEIC · up to 6 images · 10MB each
               </span>
               <input
                 type="file"
                 id="clinical-file-upload"
                 name="file"
                 className="hidden"
-                accept=".stl,.ply,.obj,image/*"
+                accept="image/*"
+                multiple
                 onChange={handleFileChange}
               />
             </label>

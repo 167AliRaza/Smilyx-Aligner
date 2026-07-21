@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "nextjs-seo-optimizer": {
+      "source": "kumbajirajkumar123/nextjs-seo-optimizer",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "803bad2c49f877c31f9f4481247b55fe4faf1846944b0441df620407e42768f7"
+    }
+  }
+}
