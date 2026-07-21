@@ -90,7 +90,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
             : "bg-transparent py-5"
       }`}
     >
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-20 max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <button
@@ -102,7 +102,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
           </button>
 
           {/* Desktop Nav Links */}
-          <nav id="desktop-nav" className="hidden lg:flex items-center space-x-1">
+          <nav id="desktop-nav" className="hidden lg:flex items-center space-x-1 xl:space-x-2">
             {/* Home Link */}
             <button
               onClick={() => handleLinkClick("home")}
@@ -166,7 +166,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
             <button
               id="header-cta-button"
               onClick={() => handleLinkClick("trial-case")}
-              className="bg-brand-600 hover:bg-brand-700 text-white font-display font-bold text-xs tracking-wider uppercase px-6 py-3 rounded-full shadow-lg shadow-brand-500/20 hover:shadow-xl hover:shadow-brand-500/30 transition-all duration-200 hover:-translate-y-0.5 flex items-center space-x-2 cursor-pointer"
+              className="bg-brand-600 hover:bg-brand-700 text-white font-display font-bold text-xs tracking-wider uppercase px-6 xl:px-7 py-3 rounded-full xl:rounded-xl shadow-lg shadow-brand-500/20 hover:shadow-xl hover:shadow-brand-500/30 transition-all duration-200 hover:-translate-y-0.5 flex items-center space-x-2 cursor-pointer"
             >
               <span>Submit Trial Case</span>
               <ArrowRight className="w-4 h-4" />

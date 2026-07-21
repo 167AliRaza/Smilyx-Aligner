@@ -11,7 +11,7 @@ export default function CTASection({
   onScheduleMeetingClick
 }: CTASectionProps) {
   return (
-    <section id="mid-page-cta" className="relative py-24 px-4 overflow-hidden bg-slate-900">
+    <section id="mid-page-cta" className="relative py-24 xl:py-28 px-4 sm:px-6 xl:px-10 overflow-hidden bg-slate-900">
       {/* Background Image with elegant overlay */}
       <div className="absolute inset-0 z-0">
         <img
@@ -23,7 +23,7 @@ export default function CTASection({
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/90 to-slate-950" />
       </div>
 
-      <Reveal className="max-w-4xl mx-auto text-center relative z-10 space-y-6">
+      <Reveal className="max-w-4xl xl:max-w-5xl mx-auto text-center relative z-10 space-y-6">
         <span className="font-mono text-xs font-bold text-brand-400 uppercase tracking-widest block">
           Streamline Your Workflow Today
         </span>
@@ -38,7 +38,7 @@ export default function CTASection({
           <button
             id="cta-submit-case-button"
             onClick={onSubmitCaseClick}
-            className="w-full sm:w-auto bg-brand-600 hover:bg-brand-700 text-white font-display font-bold text-xs tracking-wider uppercase px-8 py-4 rounded-full shadow-lg shadow-brand-500/20 hover:shadow-xl transition-all duration-200 hover:-translate-y-0.5 flex items-center justify-center space-x-2 cursor-pointer"
+            className="w-full sm:w-auto bg-brand-600 hover:bg-brand-700 text-white font-display font-bold text-xs tracking-wider uppercase px-8 xl:px-9 py-4 rounded-full xl:rounded-xl shadow-lg shadow-brand-500/20 hover:shadow-xl transition-all duration-200 hover:-translate-y-0.5 flex items-center justify-center space-x-2 cursor-pointer"
           >
             <span>Submit Trial Case</span>
             <ArrowRight className="w-4 h-4" />
@@ -47,7 +47,7 @@ export default function CTASection({
           <button
             id="cta-schedule-meeting-button"
             onClick={onScheduleMeetingClick}
-            className="w-full sm:w-auto bg-transparent hover:bg-white/5 text-white border-2 border-white/20 hover:border-white font-display font-bold text-xs tracking-wider uppercase px-8 py-4 rounded-full transition-all duration-200 hover:-translate-y-0.5 flex items-center justify-center space-x-2 cursor-pointer"
+            className="w-full sm:w-auto bg-transparent hover:bg-white/5 text-white border-2 border-white/20 hover:border-white font-display font-bold text-xs tracking-wider uppercase px-8 xl:px-9 py-4 rounded-full xl:rounded-xl transition-all duration-200 hover:-translate-y-0.5 flex items-center justify-center space-x-2 cursor-pointer"
           >
             <Calendar className="w-4 h-4" />
             <span>Schedule Meeting</span>

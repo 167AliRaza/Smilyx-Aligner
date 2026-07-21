@@ -14,7 +14,7 @@ export default function Hero({ onCtaClick }: HeroProps) {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="hero-section" className="relative min-h-[90vh] flex items-center justify-center pt-24 pb-16 overflow-hidden">
+    <section id="hero-section" className="relative min-h-[90vh] xl:min-h-[760px] 2xl:min-h-[820px] flex items-center justify-center pt-24 xl:pt-28 pb-16 xl:pb-20 overflow-hidden">
       {/* Background Image with elegant overlay */}
       <div className="absolute inset-0 z-0">
         <motion.img
@@ -29,8 +29,8 @@ export default function Hero({ onCtaClick }: HeroProps) {
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-900/60 to-slate-950/40" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="max-w-3xl mx-auto space-y-8 text-center text-white">
+      <div className="max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 relative z-10 w-full">
+        <div className="max-w-3xl xl:max-w-4xl mx-auto space-y-8 xl:space-y-9 text-center text-white">
           <Reveal variant="scale" className="inline-flex items-center space-x-2 bg-brand-500/20 backdrop-blur-md px-4 py-2 rounded-full border border-brand-500/30">
             <Clock className="w-4 h-4 text-brand-400" />
             <span className="font-mono text-xs font-bold text-brand-300 uppercase tracking-wider">
@@ -39,7 +39,7 @@ export default function Hero({ onCtaClick }: HeroProps) {
           </Reveal>
 
           <Reveal delay={0.08}>
-            <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-tight text-white italic text-balance">
+            <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl xl:text-7xl tracking-tight leading-tight text-white italic text-balance">
             Digital Planning <br />
             <span className="text-brand-400">
               for Clear Aligner Care.
@@ -57,7 +57,7 @@ export default function Hero({ onCtaClick }: HeroProps) {
             <button
               id="hero-primary-cta"
               onClick={onCtaClick}
-              className="bg-brand-600 hover:bg-brand-700 text-white font-display font-bold uppercase tracking-widest text-xs px-8 py-4 rounded-full shadow-lg shadow-brand-500/20 hover:shadow-xl hover:shadow-brand-500/30 transition-all duration-200 hover:-translate-y-0.5 flex items-center justify-center space-x-2 cursor-pointer"
+              className="bg-brand-600 hover:bg-brand-700 text-white font-display font-bold uppercase tracking-widest text-xs px-8 xl:px-9 py-4 rounded-full xl:rounded-xl shadow-lg shadow-brand-500/20 hover:shadow-xl hover:shadow-brand-500/30 transition-all duration-200 hover:-translate-y-0.5 flex items-center justify-center space-x-2 cursor-pointer"
             >
               <span>Submit Trial Case</span>
               <ArrowRight className="w-4 h-4" />

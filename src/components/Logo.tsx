@@ -25,7 +25,7 @@ export default function Logo({
       {/* High-Fidelity SVG Icon with the clinical-blue circle and tooth mark */}
       <svg
         viewBox="0 0 100 100"
-        className="w-11 h-11 shrink-0 select-none overflow-visible"
+        className="w-11 h-11 xl:w-12 xl:h-12 shrink-0 select-none overflow-visible"
         aria-hidden="true"
       >
         <defs>
@@ -78,10 +78,10 @@ export default function Logo({
       {/* Brand Text styled with Modern/Professional Font (SmilyX clear aligners) */}
       {showText && !iconOnly && (
         <div className="flex flex-col text-left leading-none">
-          <span className={`text-xl sm:text-[23px] font-extrabold tracking-[0.03em] ${primaryTextColor} font-display uppercase`}>
+          <span className={`text-xl sm:text-[23px] xl:text-[25px] font-extrabold tracking-[0.03em] ${primaryTextColor} font-display uppercase`}>
             SmilyX
           </span>
-          <span className={`text-[9px] sm:text-[10px] font-extrabold tracking-[0.28em] ${secondaryTextColor} font-display uppercase mt-1`}>
+          <span className={`text-[9px] sm:text-[10px] xl:text-[11px] font-extrabold tracking-[0.24em] ${secondaryTextColor} font-display uppercase mt-1`}>
             clear aligners
           </span>
         </div>
