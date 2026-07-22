@@ -90,8 +90,8 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
             : "bg-transparent py-5"
       }`}
     >
-      <div className="relative z-20 max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12">
-        <div className="flex items-center justify-between">
+      <div className="layout-container relative z-20">
+        <div className="flex w-full items-center justify-between">
           {/* Logo */}
           <button
             id="logo-button"

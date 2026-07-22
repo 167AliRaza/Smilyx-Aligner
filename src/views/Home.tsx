@@ -70,7 +70,7 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
 
       {/* b) Brand intro strip */}
       <section id="brand-intro-strip" className="py-20 bg-white border-b border-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="layout-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Supporting Image */}
             <Reveal variant="left" className="relative group">
@@ -120,7 +120,7 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
 
       {/* c) "Our Services" section */}
       <section id="our-services-section" className="py-24 bg-slate-50/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="layout-container">
           <Reveal className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div className="space-y-4 text-left">
               <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">
@@ -183,7 +183,7 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
 
       {/* d) Treatment Options Overview */}
       <section id="treatment-options-overview" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="layout-container">
           <Reveal className="text-center max-w-3xl mx-auto space-y-4 mb-16">
             <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">
               Treatment Options
@@ -274,7 +274,7 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
 
       {/* e) "About Us" teaser */}
       <section id="about-us-teaser" className="py-24 bg-slate-50/30 border-t border-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="layout-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Copy teaser */}
             <Reveal variant="left" className="space-y-6">
@@ -334,7 +334,7 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
 
       {/* g) Testimonials */}
       <section id="testimonials-section" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="layout-container">
           <Reveal className="text-center max-w-3xl mx-auto space-y-4 mb-16">
             <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">
               Clinical Partners & Patients

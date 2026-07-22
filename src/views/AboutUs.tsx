@@ -61,7 +61,7 @@ export default function AboutUs() {
             referrerPolicy="no-referrer"
           />
         </div>
-        <Reveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
+        <Reveal className="layout-container relative z-10 text-center space-y-4">
           <div className="inline-flex items-center space-x-2 bg-brand-500/20 text-brand-400 px-4 py-1.5 rounded-full border border-brand-500/20 text-xs font-mono font-bold uppercase tracking-wider">
             <Users className="w-3.5 h-3.5" />
             <span>The Smilyx Foundation</span>
@@ -76,7 +76,7 @@ export default function AboutUs() {
       </section>
 
       {/* Narrative Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="layout-container">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           <Reveal variant="left" className="lg:col-span-6 relative">
             <img
@@ -109,7 +109,7 @@ export default function AboutUs() {
 
       {/* Clinical Values */}
       <section className="bg-slate-50 py-24 border-y border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+        <div className="layout-container space-y-16">
           <Reveal className="text-center max-w-3xl mx-auto space-y-4">
             <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">
               Core Pillars
@@ -140,7 +140,7 @@ export default function AboutUs() {
       </section>
 
       {/* Team grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <section className="layout-container space-y-16">
         <Reveal className="text-center max-w-3xl mx-auto space-y-4">
           <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">
             The Planning Team

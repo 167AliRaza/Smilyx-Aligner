@@ -29,7 +29,7 @@ export default function Hero({ onCtaClick }: HeroProps) {
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-900/60 to-slate-950/40" />
       </div>
 
-      <div className="max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 relative z-10 w-full">
+      <div className="layout-container relative z-10">
         <div className="max-w-3xl xl:max-w-4xl mx-auto space-y-8 xl:space-y-9 text-center text-white">
           <Reveal variant="scale" className="inline-flex items-center space-x-2 bg-brand-500/20 backdrop-blur-md px-4 py-2 rounded-full border border-brand-500/30">
             <Clock className="w-4 h-4 text-brand-400" />

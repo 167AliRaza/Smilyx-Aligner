@@ -86,7 +86,7 @@ export default function HowWeTreat() {
             referrerPolicy="no-referrer"
           />
         </div>
-        <Reveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
+        <Reveal className="layout-container relative z-10 text-center space-y-4">
           <div className="inline-flex items-center space-x-2 bg-brand-500/20 text-brand-400 px-4 py-1.5 rounded-full border border-brand-500/20 text-xs font-mono font-bold uppercase tracking-wider">
             <span>Digital Workflow Design</span>
           </div>
@@ -100,7 +100,7 @@ export default function HowWeTreat() {
       </section>
 
       {/* Sequential Treatment Steps */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+      <section className="layout-container space-y-20">
         <Reveal className="text-center max-w-3xl mx-auto space-y-4">
           <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">
             The 4-Step Cycle
@@ -173,7 +173,7 @@ export default function HowWeTreat() {
 
       {/* Interactive treatable malocclusions list */}
       <section className="bg-slate-50 py-24 border-y border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="layout-container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Explanatory intro */}
             <Reveal variant="left" className="lg:col-span-5 space-y-6">

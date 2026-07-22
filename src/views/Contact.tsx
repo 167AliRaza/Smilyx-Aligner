@@ -16,7 +16,7 @@ export default function Contact() {
             referrerPolicy="no-referrer"
           />
         </div>
-        <Reveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
+        <Reveal className="layout-container relative z-10 text-center space-y-4">
           <div className="inline-flex items-center space-x-2 bg-brand-500/20 text-brand-400 px-4 py-1.5 rounded-full border border-brand-500/20 text-xs font-mono font-bold uppercase tracking-wider">
             <Mail className="w-3.5 h-3.5" />
             <span>Connect With Us</span>

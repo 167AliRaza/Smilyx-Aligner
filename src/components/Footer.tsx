@@ -20,7 +20,7 @@ export default function Footer({ onNavigate }: FooterProps) {
 
   return (
     <footer id="main-footer" className="bg-slate-900 text-slate-400 pt-16 pb-8 border-t border-slate-800">
-      <div className="max-w-7xl xl:max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12">
+      <div className="layout-container">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand Info */}
           <div className="space-y-4">

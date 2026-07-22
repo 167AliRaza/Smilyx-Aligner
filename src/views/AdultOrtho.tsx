@@ -14,7 +14,7 @@ export default function AdultOrtho() {
             referrerPolicy="no-referrer"
           />
         </div>
-        <Reveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6">
+        <Reveal className="layout-container relative z-10 text-center space-y-6">
           <div className="inline-flex items-center space-x-2 bg-brand-500/20 text-brand-300 px-4 py-1.5 rounded-full border border-brand-500/20 text-xs font-mono font-bold uppercase tracking-wider">
             <Briefcase className="w-3.5 h-3.5" />
             <span>Adult Orthodontics</span>
@@ -29,7 +29,7 @@ export default function AdultOrtho() {
       </section>
 
       {/* Main Philosophy */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="layout-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <Reveal variant="left" className="space-y-6 text-left">
             <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">Adult Orthodontics</span>

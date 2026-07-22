@@ -15,7 +15,7 @@ export default function Invisalign() {
             referrerPolicy="no-referrer"
           />
         </div>
-        <Reveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6">
+        <Reveal className="layout-container relative z-10 text-center space-y-6">
           <div className="inline-flex items-center space-x-2 bg-brand-500/20 text-brand-300 px-4 py-1.5 rounded-full border border-brand-500/20 text-xs font-mono font-bold uppercase tracking-wider">
             <span>Clear Aligner Treatment</span>
           </div>
@@ -29,7 +29,7 @@ export default function Invisalign() {
       </section>
 
       {/* Intro Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="layout-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <Reveal variant="left" className="space-y-6 text-left">
             <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">
@@ -84,7 +84,7 @@ export default function Invisalign() {
 
       {/* Clinical Staging process */}
       <section className="bg-slate-50 py-20 border-y border-slate-100 text-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div className="layout-container space-y-12">
           <Reveal className="max-w-2xl mx-auto space-y-4">
             <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">The Clear Aligner Journey</span>
             <h2 className="font-display font-black text-3xl text-slate-900 tracking-tight">How It Works Step-By-Step</h2>

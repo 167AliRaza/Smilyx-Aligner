@@ -45,6 +45,29 @@
   }
 }
 
+/* Shared content rail: section surfaces remain full-bleed while their content aligns. */
+.layout-container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@media (min-width: 640px) {
+  .layout-container { padding-inline: 1.5rem; }
+}
+
+@media (min-width: 1024px) {
+  .layout-container { padding-inline: 2rem; }
+}
+
+@media (min-width: 1280px) {
+  .layout-container { padding-inline: 2.5rem; }
+}
+
+@media (min-width: 1536px) {
+  .layout-container { padding-inline: 3rem; }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
