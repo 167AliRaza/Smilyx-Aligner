@@ -84,7 +84,7 @@ export default function BeforeAfterSlider({
       >
         <img
           src={afterImg}
-          alt="After Smilyx treatment"
+          alt="After Vélourcare Ortho treatment"
           className="absolute inset-0 w-full h-full object-cover pointer-events-none"
           style={{ width: containerRef.current?.getBoundingClientRect().width }}
           referrerPolicy="no-referrer"

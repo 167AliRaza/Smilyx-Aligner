@@ -51,7 +51,7 @@ export async function POST(request: Request) {
     method: "POST",
     headers: { "Content-Type": "application/json", Accept: "application/json" },
     body: JSON.stringify({
-      _subject: `New Smilyx inquiry: ${enquiryType || "General inquiry"}`,
+      _subject: `New Vélourcare Ortho inquiry: ${enquiryType || "General inquiry"}`,
       name,
       email,
       phone: clean(body.phone, 60),

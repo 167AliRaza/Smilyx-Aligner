@@ -32,9 +32,9 @@ export default function Blogs() {
           />
         </div>
         <Reveal className="layout-container relative z-10 text-center space-y-4">
-          <div className="inline-flex items-center space-x-2 bg-brand-500/20 text-brand-400 px-4 py-1.5 rounded-full border border-brand-500/20 text-xs font-mono font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center space-x-2.5 bg-brand-500/10 text-brand-200 px-4 py-1.5 rounded-full border border-brand-500/20 text-[10px] font-sans font-bold uppercase tracking-[0.2em]">
             <BookOpen className="w-3.5 h-3.5" />
-            <span>Smilyx Publications</span>
+            <span>Vélourcare Publications</span>
           </div>
           <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-none">
             Clinical Insights & Care Guides
@@ -112,7 +112,7 @@ export default function Blogs() {
           <div className="prose prose-slate max-w-none text-slate-700 text-sm sm:text-base leading-relaxed space-y-6 pt-4 border-t border-slate-100 font-sans">
             <p>{activeBlog.content}</p>
             <p className="text-slate-600">
-              Clear aligner treatment works best when tooth movements are planned in small, controlled stages. Smilyx aligners are hand-finished to support comfort and reduce avoidable soft-tissue irritation.
+              Clear aligner treatment works best when tooth movements are planned in small, controlled stages. Vélourcare Ortho aligners are hand-finished to support comfort and reduce avoidable soft-tissue irritation.
             </p>
             <p className="text-slate-600">
               Before starting clear aligner treatment, we recommend a full intraoral scan and periodontal review to confirm that the teeth and supporting tissues are ready for movement. Visit How We Treat to see how we build the clinical baseline.

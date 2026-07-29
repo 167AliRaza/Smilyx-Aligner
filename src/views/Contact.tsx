@@ -17,7 +17,7 @@ export default function Contact() {
           />
         </div>
         <Reveal className="layout-container relative z-10 text-center space-y-4">
-          <div className="inline-flex items-center space-x-2 bg-brand-500/20 text-brand-400 px-4 py-1.5 rounded-full border border-brand-500/20 text-xs font-mono font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center space-x-2.5 bg-white/5 text-white px-5 py-2 rounded-full border border-white/10 text-xs font-sans font-medium uppercase tracking-[0.2em] shadow-sm">
             <Mail className="w-3.5 h-3.5" />
             <span>Connect With Us</span>
           </div>
@@ -40,7 +40,7 @@ export default function Contact() {
                 Our Singapore Headquarters
               </h2>
               <p className="text-slate-500 text-xs leading-relaxed">
-                Smilyx clinical design laboratories follow quality management and data privacy standards for digital orthodontic records.
+                Vélourcare Ortho clinical design laboratories follow quality management and data privacy standards for digital orthodontic records.
               </p>
             </div>
 
@@ -117,7 +117,7 @@ export default function Contact() {
                     <MapPin className="w-6 h-6 stroke-[2]" />
                   </div>
                   <div className="bg-slate-900 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-md mt-2 border border-slate-800">
-                    SMILYX LABS
+                    VÉLOURCARE ORTHO
                   </div>
                 </div>
               </div>

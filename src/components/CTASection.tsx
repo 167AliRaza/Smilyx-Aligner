@@ -38,7 +38,7 @@ export default function CTASection({
           <button
             id="cta-submit-case-button"
             onClick={onSubmitCaseClick}
-            className="w-full sm:w-auto bg-brand-600 hover:bg-brand-700 text-white font-display font-bold text-xs tracking-wider uppercase px-8 xl:px-9 py-4 rounded-full xl:rounded-xl shadow-lg shadow-brand-500/20 hover:shadow-xl transition-all duration-200 hover:-translate-y-0.5 flex items-center justify-center space-x-2 cursor-pointer"
+            className="w-full sm:w-auto bg-brand-500 hover:bg-brand-600 text-slate-900 font-display font-bold text-xs tracking-wider uppercase px-8 xl:px-9 py-4 rounded-full xl:rounded-xl shadow-lg shadow-brand-500/20 hover:shadow-xl transition-all duration-200 hover:-translate-y-0.5 flex items-center justify-center space-x-2 cursor-pointer"
           >
             <span>Submit Trial Case</span>
             <ArrowRight className="w-4 h-4" />

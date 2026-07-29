@@ -16,7 +16,7 @@ export const services: TreatmentService[] = [
     id: "ortho-design",
     title: "Expert Orthodontic Planning",
     shortDesc: "Tooth-movement mapping by our clinical doctors, aligner planning expert, and certified dental technologist under licensed orthodontist supervision.",
-    fullDesc: "Tooth movement needs careful planning. Smilyx uses digital setup software to review the force and sequence required for each tooth. Your plan is prepared by our clinical doctors, aligner design specialists, and an assisting certified dental technologist, with direct supervision from a licensed orthodontist. The goal is a clear step-by-step path that is comfortable, safe, and ready for review in 24 hours.",
+    fullDesc: "Tooth movement needs careful planning. Vélourcare Ortho uses digital setup software to review the force and sequence required for each tooth. Your plan is prepared by our clinical doctors, aligner design specialists, and an assisting certified dental technologist, with direct supervision from a licensed orthodontist. The goal is a clear step-by-step path that is comfortable, safe, and ready for review in 24 hours.",
     duration: "24 Hours",
     suitableFor: ["All malocclusions", "Custom case planning", "Relapse corrections"],
     imageUrl: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop"
@@ -80,7 +80,7 @@ export const blogPosts: BlogPost[] = [
     slug: "how-clear-aligners-safely-move-teeth",
     title: "How Clear Aligners Safely Move Teeth: The Biomechanics",
     excerpt: "A clear look at bone remodeling, periodontal ligament response, and the controlled forces behind clear aligners.",
-    content: "When you wear a new set of clear aligners, the tray applies light, planned pressure to specific teeth. That pressure starts a normal biological process called bone remodeling. On the pressure side, the periodontal ligament compresses and osteoclasts help resorb old bone. On the tension side, osteoblasts help build new bone. Smilyx Clear Aligners are made from medical polyurethane selected to keep these forces controlled and comfortable throughout treatment.",
+    content: "When you wear a new set of clear aligners, the tray applies light, planned pressure to specific teeth. That pressure starts a normal biological process called bone remodeling. On the pressure side, the periodontal ligament compresses and osteoclasts help resorb old bone. On the tension side, osteoblasts help build new bone. Vélourcare Ortho aligners are made from medical polyurethane selected to keep these forces controlled and comfortable throughout treatment.",
     category: "Biomechanics",
     author: {
       name: "Dr. Marcus Vance",
@@ -128,8 +128,8 @@ export const blogPosts: BlogPost[] = [
 export const FAQs: FAQItem[] = [
   {
     category: "General",
-    question: "What makes Smilyx Clear Aligners different from standard aligners?",
-    answer: "Smilyx Clear Aligners use multi-layer polymers selected for steady orthodontic force. Each setup is custom-designed and approved by a licensed, board-certified orthodontist rather than left to an algorithm alone."
+    question: "What makes Vélourcare Ortho aligners different from standard aligners?",
+    answer: "Vélourcare Ortho aligners use multi-layer polymers selected for steady orthodontic force. Each setup is custom-designed and approved by a licensed, board-certified orthodontist rather than left to an algorithm alone."
   },
   {
     category: "Treatment",
@@ -138,7 +138,7 @@ export const FAQs: FAQItem[] = [
   },
   {
     category: "Treatment",
-    question: "How long does the average Smilyx alignment take?",
+    question: "How long does the average Vélourcare Ortho alignment take?",
     answer: "Many cases finish in 6 to 12 months. Mild cases may take about 4 months, while complex cases can take 18 months or longer depending on the treatment goals."
   },
   {
@@ -164,7 +164,7 @@ export const testimonials: Testimonial[] = [
     name: "Dr. Catherine Bennett",
     role: "Clinical Partner",
     clinic: "Bennett Aesthetic Dentistry",
-    feedback: "Smilyx has made our clear aligner workflow much easier. Their digital setup turnaround is fast, and the polished trim line has reduced soft-tissue irritation complaints from my patients.",
+    feedback: "Vélourcare Ortho has made our clear aligner workflow much easier. Their digital setup turnaround is fast, and the polished trim line has reduced soft-tissue irritation complaints from my patients.",
     imageUrl: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=150&auto=format&fit=crop",
     rating: 5
   },
@@ -172,8 +172,8 @@ export const testimonials: Testimonial[] = [
     id: "t-02",
     name: "Jeremy Thorne",
     role: "Relapse Patient",
-    clinic: "Smilyx Member",
-    feedback: "I wore braces as a teenager but stopped wearing my retainer, and my lower teeth became crowded again. Smilyx corrected the relapse in 5 months. The trays were clear enough that most people did not notice them.",
+    clinic: "Vélourcare Member",
+    feedback: "I wore braces as a teenager but stopped wearing my retainer, and my lower teeth became crowded again. Vélourcare Ortho corrected the relapse in 5 months. The trays were clear enough that most people did not notice them.",
     imageUrl: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=150&auto=format&fit=crop",
     rating: 5
   },
@@ -181,20 +181,21 @@ export const testimonials: Testimonial[] = [
     id: "t-03",
     name: "Elena Rostova",
     role: "Verified Patient",
-    clinic: "Smilyx Member",
-    feedback: "I had a large gap between my front teeth for years. Smilyx designed a 7-month plan that closed it, and the support team guided me through each tray change. I feel much more comfortable smiling now.",
+    clinic: "Vélourcare Member",
+    feedback: "I had a large gap between my front teeth for years. Vélourcare Ortho designed a 7-month plan that closed it, and the support team guided me through each tray change. I feel much more comfortable smiling now.",
     imageUrl: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150&auto=format&fit=crop",
     rating: 5
   }
 ];
 
-export const officeAddress = "100 Dental Science Pkwy, Suite 400, Singapore 048582";
+export const officeAddress = "Nawab Town E Block";
 export const officeHours = [
   { days: "Monday - Friday", hours: "8:00 AM - 6:00 PM" },
   { days: "Saturday", hours: "9:00 AM - 3:00 PM" },
   { days: "Sunday", hours: "Closed" }
 ];
 export const officeContact = {
-  phone: "+65 6789 0123",
+  phone: "+923294053244",
+  // TODO: Replace with verified Vélourcare Ortho email address when available
   email: "partner@smilyx-aligners.com"
 };

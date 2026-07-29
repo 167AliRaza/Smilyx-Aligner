@@ -5,10 +5,11 @@ import { organizationSchema, siteDescription, siteName, siteUrl } from "@/src/li
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: { default: siteName, template: `%s | ${siteName}` },
+  title: { default: "Vélourcare Ortho | Digital Orthodontic Planning & Clear Aligner Care", template: `%s | ${siteName}` },
   description: siteDescription,
   applicationName: siteName,
   icons: { icon: "/favicon.svg" },
+  other: { "theme-color": "#F7F5EF" },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

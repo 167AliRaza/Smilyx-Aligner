@@ -64,7 +64,7 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
       {/* Brand Intro Strip */}
       <Reveal variant="soft" className="py-5 w-full bg-brand-50 flex items-center justify-center px-6 sm:px-12 border-b border-brand-100 text-center">
         <p className="text-brand-900 text-xs sm:text-sm font-medium italic">
-          "Detailed protocols. Streamlined workflow. Minimal errors. Smilyx is the preferred partner for clinical excellence."
+          "Detailed protocols. Streamlined workflow. Minimal errors. Vélourcare Ortho is the preferred partner for clinical excellence."
         </p>
       </Reveal>
 
@@ -101,7 +101,7 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
                 Predictable Movement. Minimal Errors.
               </h2>
               <p className="text-slate-600 text-sm leading-relaxed max-w-xl">
-                Every custom aligner plan at Smilyx is prepared by our clinical planning team, including doctors, an aligner expert, and a certified dental technologist, with active supervision from a licensed master orthodontist. We review tooth movement with high-resolution digital simulations so each tray fits accurately and the treatment plan is easier to follow. The result is fewer mid-course corrections, less chair time, and tooth movement that stays within a clinically controlled range.
+                Every custom aligner plan at Vélourcare Ortho is prepared by our clinical planning team, including doctors, an aligner expert, and a certified dental technologist, with active supervision from a licensed master orthodontist. We review tooth movement with high-resolution digital simulations so each tray fits accurately and the treatment plan is easier to follow. The result is fewer mid-course corrections, less chair time, and tooth movement that stays within a clinically controlled range.
               </p>
               <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-100">
                 <div>
@@ -279,13 +279,13 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
             {/* Copy teaser */}
             <Reveal variant="left" className="space-y-6">
               <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">
-                Meet Smilyx
+                Meet Vélourcare Ortho
               </span>
               <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight leading-tight">
                 An Orthodontic Lab Built for Accuracy.
               </h2>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Founded by experienced orthodontists and biomaterial lab technicians, Smilyx Clear Aligners connects digital diagnostics with comfortable treatment planning. We do not rely on unsupervised aligner algorithms. Every stage is reviewed, adjusted, and approved by a licensed doctor.
+                Founded by experienced orthodontists and biomaterial lab technicians, Vélourcare Ortho connects digital diagnostics with comfortable treatment planning. We do not rely on unsupervised aligner algorithms. Every stage is reviewed, adjusted, and approved by a licensed doctor.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
@@ -312,7 +312,7 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
             <Reveal variant="right" className="relative">
               <img
                 src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop"
-                alt="Smilyx modern digital laboratory"
+                alt="Vélourcare Ortho modern digital laboratory"
                 className="rounded-3xl shadow-xl w-full object-cover aspect-square"
                 referrerPolicy="no-referrer"
               />
@@ -343,7 +343,7 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
               What Our Community Says
             </h2>
             <p className="text-slate-500 text-sm leading-relaxed">
-              Orthodontic practices and patients use Smilyx for clear planning, careful fit, and outcomes that look natural.
+              Orthodontic practices and patients use Vélourcare Ortho for clear planning, careful fit, and outcomes that look natural.
             </p>
           </Reveal>
 

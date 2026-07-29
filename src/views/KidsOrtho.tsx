@@ -16,7 +16,7 @@ export default function KidsOrtho() {
           />
         </div>
         <Reveal className="layout-container relative z-10 text-center space-y-6">
-          <div className="inline-flex items-center space-x-2 bg-brand-500/20 text-brand-300 px-4 py-1.5 rounded-full border border-brand-500/20 text-xs font-mono font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center space-x-2.5 bg-white/10 text-white px-5 py-2 rounded-full border border-white/20 text-xs font-sans font-medium uppercase tracking-[0.2em]">
             <Smile className="w-3.5 h-3.5" />
             <span>Early Interceptive Orthodontics</span>
           </div>

@@ -16,15 +16,15 @@ export default function PrivacyPolicy() {
           />
         </div>
         <Reveal className="layout-container relative z-10 text-center space-y-4">
-          <div className="inline-flex items-center space-x-2 bg-brand-500/20 text-brand-400 px-4 py-1.5 rounded-full border border-brand-500/20 text-xs font-mono font-bold uppercase tracking-wider">
-            <Lock className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center space-x-2.5 bg-white/5 text-white/70 px-4 py-1.5 rounded-full border border-white/10 text-[10px] font-sans font-medium uppercase tracking-[0.2em]">
+            <Lock className="w-3 h-3" />
             <span>Confidentiality Protocol</span>
           </div>
           <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-none">
             Privacy Policy
           </h1>
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            How Smilyx Clear Aligners safeguards patient 3D dental datasets, intraoral scans, dental photographs, and personal identity.
+            How Vélourcare Ortho safeguards patient 3D dental datasets, intraoral scans, dental photographs, and personal identity.
           </p>
         </Reveal>
       </section>
@@ -41,7 +41,7 @@ export default function PrivacyPolicy() {
         <div className="space-y-3">
           <h2 className="font-display font-bold text-xl text-slate-900">1. Medical Data Collection</h2>
           <p>
-            Smilyx Clear Aligners collects and processes patient dental scans, panoramic radiographs, intraoral photos, and medical history documents supplied by authorized dental practitioners or patients themselves. This collection is strictly required to model tooth translation trajectories and manufacture thermoformed aligners safely.
+            Vélourcare Ortho collects and processes patient dental scans, panoramic radiographs, intraoral photos, and medical history documents supplied by authorized dental practitioners or patients themselves. This collection is strictly required to model tooth translation trajectories and manufacture thermoformed aligners safely.
           </p>
         </div>
 
@@ -68,7 +68,7 @@ export default function PrivacyPolicy() {
 
         <div className="pt-6 border-t border-slate-100 text-slate-400 text-xs">
           <p>Last Revised: July 12, 2026</p>
-          <p className="mt-1">Smilyx Clear Aligners Compliance Division (Singapore)</p>
+          <p className="mt-1">Vélourcare Ortho Compliance Division (Singapore)</p>
         </div>
       </RevealGroup>
     </div>

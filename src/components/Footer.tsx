@@ -19,7 +19,7 @@ export default function Footer({ onNavigate }: FooterProps) {
   };
 
   return (
-    <footer id="main-footer" className="bg-slate-900 text-slate-400 pt-16 pb-8 border-t border-slate-800">
+    <footer id="main-footer" className="bg-slate-900 text-slate-400 pt-16 pb-8 border-t border-slate-850">
       <div className="layout-container">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand Info */}
@@ -39,7 +39,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-slate-800 hover:bg-brand-600 hover:text-white flex items-center justify-center transition-all duration-200 text-slate-400"
+                className="w-9 h-9 rounded-full bg-slate-800 hover:bg-brand-500 hover:text-slate-900 flex items-center justify-center transition-all duration-200 text-slate-400"
                 aria-label="Facebook"
               >
                 <Facebook className="w-4 h-4" />
@@ -48,7 +48,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-slate-800 hover:bg-brand-600 hover:text-white flex items-center justify-center transition-all duration-200 text-slate-400"
+                className="w-9 h-9 rounded-full bg-slate-800 hover:bg-brand-500 hover:text-slate-900 flex items-center justify-center transition-all duration-200 text-slate-400"
                 aria-label="Instagram"
               >
                 <Instagram className="w-4 h-4" />
@@ -57,7 +57,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-slate-800 hover:bg-brand-600 hover:text-white flex items-center justify-center transition-all duration-200 text-slate-400"
+                className="w-9 h-9 rounded-full bg-slate-800 hover:bg-brand-500 hover:text-slate-900 flex items-center justify-center transition-all duration-200 text-slate-400"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-4 h-4" />
@@ -66,7 +66,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                 href="https://whatsapp.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-slate-800 hover:bg-brand-600 hover:text-white flex items-center justify-center transition-all duration-200 text-slate-400"
+                className="w-9 h-9 rounded-full bg-slate-800 hover:bg-brand-500 hover:text-slate-900 flex items-center justify-center transition-all duration-200 text-slate-400"
                 aria-label="WhatsApp"
               >
                 <MessageCircle className="w-4 h-4" />
@@ -183,7 +183,7 @@ export default function Footer({ onNavigate }: FooterProps) {
 
         {/* Divider & Bottom Section */}
         <div className="border-t border-slate-850 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-          <p>© {new Date().getFullYear()} Smilyx Clear Aligners. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Vélourcare Ortho. All rights reserved.</p>
           <div className="flex items-center space-x-6">
             <button
               onClick={() => handleNavClick("privacy-policy")}
@@ -199,7 +199,7 @@ export default function Footer({ onNavigate }: FooterProps) {
             </button>
             <button
               onClick={scrollToTop}
-              className="bg-slate-800 hover:bg-brand-600 text-white p-2 rounded-full transition-all duration-200 cursor-pointer"
+              className="bg-slate-800 hover:bg-brand-500 hover:text-slate-900 text-white p-2 rounded-full transition-all duration-200 cursor-pointer"
               aria-label="Scroll to top"
             >
               <ArrowUp className="w-4 h-4" />

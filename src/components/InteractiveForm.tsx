@@ -122,9 +122,9 @@ export default function InteractiveForm({ defaultEnquiryType = "general" }: Inte
   };
 
   return (
-    <div id="interactive-form-root" className="bg-white rounded-3xl shadow-2xl p-6 sm:p-10 border border-slate-100 relative overflow-hidden transition-all duration-300">
+    <div id="interactive-form-root" className="bg-[#FCFBF8] rounded-3xl shadow-2xl p-6 sm:p-10 border border-[#E5E0D6] relative overflow-hidden transition-all duration-300">
       {/* Decorative top strip */}
-      <div className="absolute top-0 inset-x-0 h-2 bg-gradient-to-r from-brand-500 via-brand-600 to-brand-700" />
+      <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-brand-400 via-brand-500 to-brand-600" />
 
       <AnimatePresence mode="wait">
       {isSuccess ? (
@@ -161,7 +161,7 @@ export default function InteractiveForm({ defaultEnquiryType = "general" }: Inte
           )}
           <button
             onClick={() => setIsSuccess(false)}
-            className="px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white text-xs font-display font-bold uppercase tracking-wider rounded-full shadow-md transition-all duration-150 cursor-pointer"
+            className="px-6 py-3 bg-brand-500 hover:bg-brand-600 text-slate-900 text-xs font-display font-bold uppercase tracking-wider rounded-full shadow-md transition-all duration-150 cursor-pointer"
           >
             Submit Another Case
           </button>
@@ -370,7 +370,7 @@ export default function InteractiveForm({ defaultEnquiryType = "general" }: Inte
               className="w-5 h-5 rounded text-brand-600 focus:ring-brand-100 border-slate-300 mt-0.5 cursor-pointer"
             />
             <label htmlFor="agreedToTerms-checkbox" className="text-xs text-slate-500 leading-relaxed cursor-pointer select-none">
-              I agree to the processing of clinical medical data in accordance with Smilyx Clear Aligners' Privacy Policy and regional patient confidentiality requirements (HIPAA/PDPA).
+              I agree to the processing of clinical medical data in accordance with Vélourcare Ortho's Privacy Policy and regional patient confidentiality requirements (HIPAA/PDPA).
             </label>
           </div>
 
@@ -379,7 +379,7 @@ export default function InteractiveForm({ defaultEnquiryType = "general" }: Inte
             type="submit"
             id="form-submit-button"
             disabled={isSubmitting}
-            className={`w-full bg-brand-600 hover:bg-brand-700 disabled:bg-slate-400 text-white font-display font-bold text-sm uppercase tracking-widest py-4 rounded-xl shadow-lg transition-all duration-200 flex items-center justify-center space-x-2 ${
+            className={`w-full bg-brand-500 hover:bg-brand-600 disabled:bg-slate-400 text-slate-900 font-display font-bold text-sm uppercase tracking-widest py-4 rounded-xl shadow-lg transition-all duration-200 flex items-center justify-center space-x-2 ${
               isSubmitting ? "cursor-wait" : "cursor-pointer hover:-translate-y-0.5"
             }`}
           >

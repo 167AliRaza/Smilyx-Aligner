@@ -73,10 +73,10 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
   const hasDarkHero = currentPage !== "";
   const overHero = hasDarkHero && !isScrolled && !isOpen;
   const navBase =
-    "px-4 py-2 font-display text-xs font-bold uppercase tracking-wider transition-all cursor-pointer rounded-full";
+    "px-4 py-2 font-display text-xs font-bold uppercase tracking-wider transition-all cursor-pointer rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500";
   const navIdle = overHero
     ? "text-white/80 hover:text-white hover:bg-white/10"
-    : "text-slate-500 hover:text-brand-600 hover:bg-slate-50";
+    : "text-slate-500 hover:text-brand-500 hover:bg-brand-50/40";
   const navActive = overHero ? "text-white bg-white/15" : "text-brand-600 bg-brand-50";
 
   return (
@@ -86,7 +86,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
         isOpen
           ? "bg-slate-900 border-b border-white/10 py-4"
           : isScrolled || !hasDarkHero
-            ? "bg-white/95 backdrop-blur-md shadow-md border-b border-slate-100 py-3"
+            ? "bg-[#FCFBF8]/95 backdrop-blur-md shadow-md border-b border-[#E5E0D6] py-3"
             : "bg-transparent py-5"
       }`}
     >
@@ -125,7 +125,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
               {/* Floating Menu */}
               <div
                 onMouseLeave={() => setIsDropdownOpen(false)}
-                className={`absolute left-0 mt-1 w-56 rounded-2xl bg-white shadow-xl border border-slate-100 py-2 transition-all duration-200 origin-top-left ${
+                className={`absolute left-0 mt-1 w-56 rounded-2xl bg-[#FCFBF8] shadow-xl border border-[#E5E0D6] py-2 transition-all duration-200 origin-top-left ${
                   isDropdownOpen
                     ? "opacity-100 scale-100 translate-y-0"
                     : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
@@ -135,7 +135,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
                   <button
                     key={item.id}
                     onClick={() => handleLinkClick(item.id)}
-                    className={`w-full text-left px-5 py-3 font-display text-xs font-bold uppercase tracking-wider transition-all cursor-pointer hover:bg-brand-50 hover:text-brand-600 ${
+                    className={`w-full text-left px-5 py-3 font-display text-xs font-bold uppercase tracking-wider transition-all cursor-pointer hover:bg-brand-50 hover:text-brand-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500 ${
                       currentPage === item.id ? "text-brand-600 bg-brand-50" : "text-slate-600"
                     }`}
                   >
@@ -166,7 +166,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
             <button
               id="header-cta-button"
               onClick={() => handleLinkClick("trial-case")}
-              className="bg-brand-600 hover:bg-brand-700 text-white font-display font-bold text-xs tracking-wider uppercase px-6 xl:px-7 py-3 rounded-full xl:rounded-xl shadow-lg shadow-brand-500/20 hover:shadow-xl hover:shadow-brand-500/30 transition-all duration-200 hover:-translate-y-0.5 flex items-center space-x-2 cursor-pointer"
+              className="bg-brand-500 hover:bg-brand-600 text-slate-900 font-display font-bold text-xs tracking-wider uppercase px-6 xl:px-7 py-3 rounded-full xl:rounded-xl shadow-lg shadow-brand-500/20 hover:shadow-xl hover:shadow-brand-500/30 transition-all duration-200 hover:-translate-y-0.5 flex items-center space-x-2 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-700"
             >
               <span>Submit Trial Case</span>
               <ArrowRight className="w-4 h-4" />
@@ -198,7 +198,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
         {isOpen && (
           <motion.div
             id="mobile-drawer"
-            className="lg:hidden fixed inset-x-0 top-[76px] bottom-0 z-10 bg-white flex flex-col"
+            className="lg:hidden fixed inset-x-0 top-[76px] bottom-0 z-10 bg-[#FCFBF8] flex flex-col"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -257,7 +257,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
               <button
                 id="mobile-header-cta"
                 onClick={() => handleLinkClick("trial-case")}
-                className="min-h-12 w-full justify-center bg-brand-600 hover:bg-brand-700 text-white font-display font-bold text-xs tracking-wider uppercase px-6 py-4 rounded-xl transition-all duration-200 flex items-center space-x-2 cursor-pointer"
+                className="min-h-12 w-full justify-center bg-brand-500 hover:bg-brand-600 text-slate-900 font-display font-bold text-xs tracking-wider uppercase px-6 py-4 rounded-xl transition-all duration-200 flex items-center space-x-2 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-700"
               >
                 <span>Submit Trial Case</span>
                 <ArrowRight className="w-4 h-4" />

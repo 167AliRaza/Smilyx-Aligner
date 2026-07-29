@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 
-export const siteName = "Smilyx Clear Aligners";
+export const siteName = "Vélourcare Ortho";
 export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000").replace(/\/$/, "");
-export const siteDescription = "Clear aligner treatment with digital planning, clinical supervision, and thoughtful aftercare.";
+export const siteDescription = "Vélourcare Ortho provides doctor-led digital orthodontic planning and clear aligner support for clinical partners and patients.";
+
+// TODO: Replace with verified Vélourcare Ortho email address when available
+export const contactEmail = "partner@smilyx-aligners.com";
 
 export function pageMetadata(title: string, description: string, path = "/"): Metadata {
   const canonical = new URL(path, siteUrl).toString();
@@ -21,14 +24,11 @@ export function organizationSchema() {
     "@type": "Dentist",
     name: siteName,
     url: siteUrl,
-    telephone: "+65 6789 0123",
-    email: "partner@smilyx-aligners.com",
+    telephone: "+923294053244",
+    email: contactEmail,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "100 Dental Science Pkwy, Suite 400",
-      addressLocality: "Singapore",
-      postalCode: "048582",
-      addressCountry: "SG",
+      streetAddress: "Nawab Town E Block",
     },
   };
 }

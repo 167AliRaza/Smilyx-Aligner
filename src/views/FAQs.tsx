@@ -33,7 +33,7 @@ export default function FAQsPage() {
           />
         </div>
         <Reveal className="layout-container relative z-10 text-center space-y-4">
-          <div className="inline-flex items-center space-x-2 bg-brand-500/20 text-brand-400 px-4 py-1.5 rounded-full border border-brand-500/20 text-xs font-mono font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center space-x-2.5 bg-white/5 text-white px-5 py-2 rounded-full border border-white/10 text-[10px] font-medium uppercase tracking-[0.2em]">
             <HelpCircle className="w-3.5 h-3.5" />
             <span>Support Helpdesk</span>
           </div>
@@ -41,7 +41,7 @@ export default function FAQsPage() {
             Frequently Asked Questions
           </h1>
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            Get answers to dental inquiries, clinical workflows, and manufacturing details of Smilyx Orthodontic Clear Aligners.
+            Get answers to dental inquiries, clinical workflows, and manufacturing details of Vélourcare Ortho Clear Aligners.
           </p>
         </Reveal>
       </section>

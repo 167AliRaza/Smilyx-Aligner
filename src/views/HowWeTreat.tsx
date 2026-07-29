@@ -87,14 +87,14 @@ export default function HowWeTreat() {
           />
         </div>
         <Reveal className="layout-container relative z-10 text-center space-y-4">
-          <div className="inline-flex items-center space-x-2 bg-brand-500/20 text-brand-400 px-4 py-1.5 rounded-full border border-brand-500/20 text-xs font-mono font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center space-x-2.5 bg-white/5 text-white px-5 py-2 rounded-full border border-white/10 text-[10px] font-medium uppercase tracking-[0.2em]">
             <span>Digital Workflow Design</span>
           </div>
           <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-none">
             How We Treat
           </h1>
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            Smilyx Clear Aligners uses digital records, orthodontist review, and carefully staged clear trays to guide tooth movement. Here is the full treatment sequence.
+            Vélourcare Ortho uses digital records, orthodontist review, and carefully staged clear trays to guide tooth movement. Here is the full treatment sequence.
           </p>
         </Reveal>
       </section>
@@ -109,7 +109,7 @@ export default function HowWeTreat() {
             Our Engineered Treatment Sequence
           </h2>
           <p className="text-slate-500 text-xs sm:text-sm">
-            Every Smilyx aligner is made through a structured clinical and lab process for a comfortable, accurate fit.
+            Every Vélourcare Ortho aligner is made through a structured clinical and lab process for a comfortable, accurate fit.
           </p>
         </Reveal>
 
@@ -184,7 +184,7 @@ export default function HowWeTreat() {
                 Anatomical Conditions We Correct
               </h2>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Clear aligners are no longer limited to minor straightening. With the right attachments and case planning, Smilyx can support a wider range of orthodontic movements.
+                Clear aligners are no longer limited to minor straightening. With the right attachments and case planning, Vélourcare Ortho can support a wider range of orthodontic movements.
               </p>
               <div className="bg-white p-6 rounded-2xl shadow-xs border border-slate-100 space-y-3">
                 <div className="flex items-center space-x-2 text-brand-600">

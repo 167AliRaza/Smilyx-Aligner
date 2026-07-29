@@ -62,15 +62,15 @@ export default function AboutUs() {
           />
         </div>
         <Reveal className="layout-container relative z-10 text-center space-y-4">
-          <div className="inline-flex items-center space-x-2 bg-brand-500/20 text-brand-400 px-4 py-1.5 rounded-full border border-brand-500/20 text-xs font-mono font-bold uppercase tracking-wider">
-            <Users className="w-3.5 h-3.5" />
-            <span>The Smilyx Foundation</span>
+          <div className="inline-flex items-center space-x-2.5 bg-white/5 text-white/70 px-4 py-1.5 rounded-full border border-white/10 text-[10px] font-medium uppercase tracking-[0.2em]">
+            <Users className="w-3 h-3" />
+            <span>The Vélourcare Foundation</span>
           </div>
           <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-none">
             About Us
           </h1>
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            Founded by clinical orthodontists, Smilyx Clear Aligners is built around careful diagnosis, biocompatible materials, and consistent lab workflows.
+            Founded by clinical orthodontists, Vélourcare Ortho is built around careful diagnosis, biocompatible materials, and consistent lab workflows.
           </p>
         </Reveal>
       </section>
@@ -81,7 +81,7 @@ export default function AboutUs() {
           <Reveal variant="left" className="lg:col-span-6 relative">
             <img
               src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800&auto=format&fit=crop"
-              alt="Smilyx Team at work"
+              alt="Vélourcare Ortho team at work"
               className="rounded-[40px] shadow-2xl relative z-10 w-full aspect-[4/3] object-cover border border-slate-100"
               referrerPolicy="no-referrer"
             />
@@ -101,7 +101,7 @@ export default function AboutUs() {
               In 2021, our founders saw clear aligner treatment becoming too commercial and too automated. Some direct-to-consumer providers were shipping aligners without complete orthodontic examinations or close doctor supervision.
             </p>
             <p className="text-slate-600 text-sm leading-relaxed">
-              Smilyx Clear Aligners was created to bring doctor oversight back into the process. We combine modern 3D thermoforming with structured clinical review. Today, we support doctor partners and direct patients, with every case checked before treatment moves forward.
+              Vélourcare Ortho was created to bring doctor oversight back into the process. We combine modern 3D thermoforming with structured clinical review. Today, we support doctor partners and direct patients, with every case checked before treatment moves forward.
             </p>
           </Reveal>
         </div>

@@ -16,7 +16,7 @@ export default function Invisalign() {
           />
         </div>
         <Reveal className="layout-container relative z-10 text-center space-y-6">
-          <div className="inline-flex items-center space-x-2 bg-brand-500/20 text-brand-300 px-4 py-1.5 rounded-full border border-brand-500/20 text-xs font-mono font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center space-x-2.5 bg-white/10 backdrop-blur-sm text-white px-5 py-1.5 rounded-full border border-white/20 text-[10px] sm:text-xs font-sans font-medium uppercase tracking-[0.2em]">
             <span>Clear Aligner Treatment</span>
           </div>
           <h1 className="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-tight italic">
@@ -39,7 +39,7 @@ export default function Invisalign() {
               A Clear Path to a More Confident Smile.
             </h2>
             <p className="text-slate-600 text-sm leading-relaxed">
-              Invisalign and Smilyx Clear Aligners use removable, clear medical polyurethane trays to guide teeth gradually into better positions. Because each aligner is made from digital records of your teeth, treatment avoids wire pokes, food restrictions, and many emergency visits.
+              Invisalign and Vélourcare Ortho aligners use removable, clear medical polyurethane trays to guide teeth gradually into better positions. Because each aligner is made from digital records of your teeth, treatment avoids wire pokes, food restrictions, and many emergency visits.
             </p>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
