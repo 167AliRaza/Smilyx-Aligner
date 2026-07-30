@@ -4,11 +4,10 @@ import { useEffect, useState } from "react";
 import { ArrowRight, ShieldCheck, CheckCircle } from "lucide-react";
 import Hero from "../components/Hero";
 import CTASection from "../components/CTASection";
-import TestimonialCard from "../components/TestimonialCard";
 import InteractiveForm from "../components/InteractiveForm";
 import Reveal from "../components/Reveal";
 import RevealGroup from "../components/RevealGroup";
-import { services, testimonials } from "../data";
+import { services } from "../data";
 
 interface HomeProps {
   onNavigate: (page: string) => void;
@@ -332,30 +331,6 @@ export default function Home({ onNavigate, onSetContactDefault }: HomeProps) {
         onScheduleMeetingClick={handleScheduleClick}
       />
 
-      {/* g) Testimonials */}
-      <section id="testimonials-section" className="py-24 bg-white">
-        <div className="layout-container">
-          <Reveal className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-            <span className="font-mono text-xs font-bold text-brand-600 uppercase tracking-widest block">
-              Clinical Partners & Patients
-            </span>
-            <h2 className="font-display font-black text-3xl sm:text-4xl text-slate-900 tracking-tight">
-              What Our Community Says
-            </h2>
-            <p className="text-slate-500 text-sm leading-relaxed">
-              Orthodontic practices and patients use Vélourcare Ortho for clear planning, careful fit, and outcomes that look natural.
-            </p>
-          </Reveal>
-
-          <RevealGroup className="grid grid-cols-1 md:grid-cols-3 gap-8" childClassName="h-full">
-            {testimonials.map((testimonial) => (
-              <div key={testimonial.id} className="h-full">
-                <TestimonialCard testimonial={testimonial} />
-              </div>
-            ))}
-          </RevealGroup>
-        </div>
-      </section>
 
       {/* h) Contact section */}
       <section id="home-contact-form" className="py-24 bg-slate-50 relative overflow-hidden">

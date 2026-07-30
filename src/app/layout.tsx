@@ -8,7 +8,14 @@ export const metadata: Metadata = {
   title: { default: "Vélourcare Ortho | Digital Orthodontic Planning & Clear Aligner Care", template: `%s | ${siteName}` },
   description: siteDescription,
   applicationName: siteName,
-  icons: { icon: "/favicon.svg" },
+  icons: {
+    icon: [
+      { url: "/images/logo-emblem.png", type: "image/png" },
+      { url: "/favicon.ico" },
+    ],
+    shortcut: "/images/logo-emblem.png",
+    apple: "/images/logo-emblem.png",
+  },
   other: { "theme-color": "#F7F5EF" },
 };
 
